@@ -1,0 +1,60 @@
+Astronaut Health Monitor
+Copyright 2026 Spark Team (NASA Space Apps Challenge 2026)
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+It is a decision-support prototype, not a medical device. Alert limits and
+instructions are drafts that need flight-surgeon approval before any real use.
+
+It includes or uses the third-party material below. Each item keeps its own
+license; the Apache License 2.0 does not apply to it.
+Full license texts: THIRD_PARTY_LICENSES.txt.
+
+Software (runtime dependencies, installed from npm)
+- React and React DOM 19.3.1 - MIT License, Copyright (c) Meta Platforms, Inc. and affiliates.
+- three.js 0.180.0 - MIT License, Copyright (c) 2010-2025 three.js authors.
+- Lucide icons (lucide-react 0.544.0) - ISC License, Copyright (c) Lucide Contributors;
+  portions Copyright (c) Cole Bemis 2013-2023 (Feather, MIT).
+- B612 and B612 Mono fonts (@fontsource/b612, @fontsource/b612-mono 5.3.0) -
+  SIL Open Font License 1.1, Copyright 2012 The B612 Project Authors
+  (designed for Airbus with ONERA).
+- Electron (desktop app only, desktop/) - MIT License, Copyright (c) Electron
+  contributors, Copyright (c) 2013-2020 GitHub Inc. It bundles Chromium and
+  Node.js; their licenses ship inside the app (LICENSES.chromium.html).
+
+3D body model (public/hologram.bin, public/hologram.json)
+- Point cloud sampled from BodyParts3D 4.0, (c) The Database Center for Life
+  Science (DBCLS), licensed under Creative Commons Attribution 4.0
+  International (CC BY 4.0, https://creativecommons.org/licenses/by/4.0/;
+  database license: https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html).
+  Mitsuhashi N. et al. (2009), BodyParts3D: 3D structure database for
+  anatomical concepts, Nucleic Acids Res, https://doi.org/10.1093/nar/gkn613.
+  Changes: meshes sampled to points and packed into a binary file by
+  scripts/build_hologram.mjs.
+- Meshes as packaged by the open-source Human Atlas viewer
+  (https://github.com/ashemag/human-atlas), MIT License,
+  Copyright (c) 2026 ashemag.
+
+Map (src/data/land110.json)
+- Natural Earth 1:110m land, via world-atlas 2.0.2. Public domain.
+
+Data (src/data/)
+- NASA Open Science Data Repository (OSDR): RadLab DOSTEL-1 dose rates and
+  Inspiration4 datasets OSD-569 / OSD-575. NASA data are not copyrighted in
+  the United States; NASA does not endorse this project.
+- NASA CCMC DONKI solar energetic particle event list. Not copyrighted in the
+  United States.
+- NOAA SWPC GOES >=10 MeV integral proton flux. U.S. Government work, public
+  domain.
+- PhysioNet MMASH v1.0.0 (Rossi et al.) - Open Database License (ODbL) 1.0.
+  src/data/mmash_reference.json is a derived database (night-time rMSSD
+  medians) and is made available under the ODbL 1.0:
+  https://opendatacommons.org/licenses/odbl/1-0/
+
+Team prior work
+- src/core/gtransit/core.js is the team's own G-TRANSIT v1.1 orthostatic-risk
+  core, written by the team before the event and reused here under this
+  repository's license.
+
+Use of AI
+- Code in this repository was written with the assistance of an AI coding tool
+  (Claude Code). See README.md, "Use of AI".

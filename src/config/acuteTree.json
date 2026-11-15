@@ -1,0 +1,1024 @@
+{
+ "_about": "Acute decision tree, transcribed and translated from 'Astronaut Acute Health Decision Tree, v3 (full text)'. 4 selection screens + 111 yes/no questions = 115. Outcome codes match the English text in docs/acute-decision-tree-v3.md, and the eye-branch questions G1/G1a/G1b/G2/G2a, renamed EY1/EY1a/EY1b/EY2/EY2a because they collide with the selection screens G1/G2. Clinical content is a draft awaiting physician approval. Do not add or reword questions here without a document change.",
+ "problem": {
+  "_about": "Team review, 15 Nov 2026: this first screen replaces G1. Cabin → what is wrong (the former G1 options, one tap) → A-ENVIRONMENT / C-ENVIRONMENT-CO2; health → G2 (who) → S4.",
+  "question": "What is the problem?",
+  "options": [
+   {
+    "id": "cabin",
+    "label": "Cabin or environment",
+    "hint": "Smoke, pressure, gas, O₂ / CO₂ alarm, several people ill at once"
+   },
+   {
+    "id": "health",
+    "label": "Health problem",
+    "hint": "Yourself or a crewmate"
+   }
+  ]
+ },
+ "safety": {
+  "question": "Is there a safety problem in the environment? Select any that apply, or press 'No problem'.",
+  "options": [
+   {
+    "id": "smoke",
+    "label": "Smoke, burning smell or fire alarm",
+    "to": "A-ENVIRONMENT"
+   },
+   {
+    "id": "pressure",
+    "label": "Pressure drop or leak alarm",
+    "hint": "Cabin or module pressure",
+    "to": "A-ENVIRONMENT"
+   },
+   {
+    "id": "gas",
+    "label": "Toxic gas, chemical smell or leak",
+    "hint": "E.g. ammonia from the cooling system",
+    "to": "A-ENVIRONMENT"
+   },
+   {
+    "id": "multi",
+    "label": "Several people at once with headache, dizziness or shortness of breath",
+    "to": "ENV"
+   },
+   {
+    "id": "atmo",
+    "label": "Cabin O₂ or CO₂ alarm",
+    "to": "ENV"
+   }
+  ],
+  "cabinQuestion": "What is wrong in the cabin? Tap one.",
+  "otherLabel": "Other cabin problem / not sure"
+ },
+ "consciousness": {
+  "question": "Tap the shoulder and call out loudly. Watch the chest rise and fall for 10 seconds. Which is it?",
+  "options": [
+   {
+    "label": "Responds when called",
+    "to": "S4"
+   },
+   {
+    "label": "Does not respond, breathing normally",
+    "to": "A-CONSCIOUSNESS"
+   },
+   {
+    "label": "Does not respond; not breathing or breathing is not normal (gasping, occasional)",
+    "to": "A-CPR"
+   }
+  ],
+  "unsureNote": "Repeat the check with a 10-second countdown. If still not sure: A-CPR. If the person moves or speaks, stop CPR and continue."
+ },
+ "redFlags": {
+  "question": "Is any of these present? You can select more than one.",
+  "order": [
+   "A-ANAPHYLAXIS",
+   "A-BLEEDING",
+   "A-HEART",
+   "A-RHYTHM",
+   "A-BRAIN",
+   "A-HEAT",
+   "A-SEPSIS",
+   "A-ABDOMEN",
+   "A-EYE",
+   "A-PSYCH"
+  ],
+  "options": [
+   {
+    "label": "Bleeding that will not stop",
+    "to": "A-BLEEDING",
+    "oneTap": true
+   },
+   {
+    "label": "Swelling of lips, tongue or throat",
+    "to": "A-ANAPHYLAXIS",
+    "oneTap": true
+   },
+   {
+    "label": "Pressure or tightness in the chest",
+    "to": "A-HEART",
+    "oneTap": true
+   },
+   {
+    "label": "Feeling about to faint",
+    "to": "T4a"
+   },
+   {
+    "label": "Abdominal pain too severe to touch",
+    "to": "A-ABDOMEN",
+    "verify": {
+     "q": "Press gently on the abdomen: is the pain too severe to touch, or is vomiting not stopping with no gas passing?",
+     "basis": [
+      "T5",
+      "T5a"
+     ]
+    }
+   },
+   {
+    "label": "Fever with confusion",
+    "to": "A-SEPSIS",
+    "verify": {
+     "q": "Is there fever (38.5 °C or more) or shivering, together with confusion or extreme sleepiness?",
+     "basis": [
+      "T6",
+      "T6a"
+     ],
+     "prefill": "body_temp"
+    }
+   },
+   {
+    "label": "Sudden loss of vision or chemical in the eye",
+    "to": "A-EYE",
+    "verify": {
+     "q": "Has vision suddenly decreased, or did a chemical or a sharp object get into the eye?",
+     "basis": [
+      "T7",
+      "T7a"
+     ]
+    }
+   },
+   {
+    "label": "Slurred speech, drooping face",
+    "to": "A-BRAIN",
+    "verify": {
+     "q": "Ask them to smile, raise both arms and say a sentence. Is the face drooping, the speech slurred or one side weak?",
+     "basis": [
+      "T8"
+     ]
+    }
+   },
+   {
+    "label": "Very sudden, very severe headache",
+    "to": "A-BRAIN",
+    "verify": {
+     "q": "Did the headache start suddenly, and is it like \"the worst headache of my life\"?",
+     "basis": [
+      "T8a"
+     ]
+    }
+   },
+   {
+    "label": "Thoughts of self-harm",
+    "to": "A-PSYCH",
+    "verify": {
+     "q": "Are there thoughts of self-harm right now?",
+     "basis": [
+      "T9"
+     ]
+    }
+   },
+   {
+    "label": "Overheating and confusion",
+    "to": "A-HEAT",
+    "verify": {
+     "q": "Is the skin hot and flushed (for example after exercise or an EVA), together with confusion?",
+     "basis": [
+      "T10"
+     ],
+     "prefill": "body_temp"
+    }
+   }
+  ],
+  "other": "T1",
+  "none": "X1",
+  "_about": "Team review, 15 Nov 2026. One tap straight to the card only where time is critical and a false alarm costs little: bleeding, anaphylaxis, chest pressure (and no response / CPR on the G3 screen). Labels that act like a diagnosis get one confirming question built from the document's own T questions for that card; Yes or Not sure → the card, No → the step-by-step T questions (T1). The question wording joins the listed T questions; it awaits physician approval like the rest of the tree."
+ },
+ "nodes": {
+  "T1": {
+   "s": "T",
+   "q": "Is there bleeding that will not stop?",
+   "yes": "A-BLEEDING",
+   "no": "T2"
+  },
+  "T2": {
+   "s": "T",
+   "q": "Have the lips, tongue or throat swollen?",
+   "yes": "A-ANAPHYLAXIS",
+   "no": "T2a"
+  },
+  "T2a": {
+   "s": "T",
+   "q": "Are there itchy raised patches all over the body?",
+   "yes": "T2b",
+   "no": "T3"
+  },
+  "T2b": {
+   "s": "T",
+   "q": "Is there shortness of breath or dizziness?",
+   "yes": "A-ANAPHYLAXIS",
+   "no": "T3"
+  },
+  "T3": {
+   "s": "T",
+   "q": "Is there pressure, tightness or a crushing feeling in the chest?",
+   "hint": "The pain may spread to the arm, jaw or back.",
+   "yes": "A-HEART",
+   "no": "T4"
+  },
+  "T4": {
+   "s": "T",
+   "q": "Feeling about to faint?",
+   "yes": "T4a",
+   "no": "T5"
+  },
+  "T4a": {
+   "s": "T",
+   "q": "Is the heart beating very fast, very slow or irregularly?",
+   "hint": "The panel fills this in from the ECG when available.",
+   "yes": "A-RHYTHM",
+   "no": "C-FAINTING"
+  },
+  "T5": {
+   "s": "T",
+   "q": "Is the abdominal pain too severe to touch?",
+   "yes": "A-ABDOMEN",
+   "no": "T5a"
+  },
+  "T5a": {
+   "s": "T",
+   "q": "Is vomiting not stopping and no gas passing?",
+   "yes": "A-ABDOMEN",
+   "no": "T6"
+  },
+  "T6": {
+   "s": "T",
+   "q": "Is there fever or shivering?",
+   "hint": "The panel fills this in from core temperature.",
+   "yes": "T6a",
+   "no": "T7"
+  },
+  "T6a": {
+   "s": "T",
+   "q": "Is there confusion or extreme sleepiness?",
+   "yes": "A-SEPSIS",
+   "no": "T6b"
+  },
+  "T6b": {
+   "s": "T",
+   "q": "Is breathing very fast, or is the skin cold and pale?",
+   "yes": "A-SEPSIS",
+   "no": "T7"
+  },
+  "T7": {
+   "s": "T",
+   "q": "Has vision suddenly decreased?",
+   "yes": "A-EYE",
+   "no": "T7a"
+  },
+  "T7a": {
+   "s": "T",
+   "q": "Did a chemical or a sharp object get into the eye?",
+   "yes": "A-EYE",
+   "no": "T8"
+  },
+  "T8": {
+   "s": "T",
+   "q": "Is there a drooping face, slurred speech or weakness on one side?",
+   "hint": "Ask them to smile, raise both arms and say a sentence.",
+   "yes": "A-BRAIN",
+   "no": "T8a"
+  },
+  "T8a": {
+   "s": "T",
+   "q": "Is it a very severe headache that started suddenly?",
+   "hint": "Like \"the worst headache of my life\".",
+   "yes": "A-BRAIN",
+   "no": "T9"
+  },
+  "T9": {
+   "s": "T",
+   "q": "Are there thoughts of self-harm?",
+   "yes": "A-PSYCH",
+   "no": "T10"
+  },
+  "T10": {
+   "s": "T",
+   "q": "Is there overheating together with confusion?",
+   "hint": "Hot, flushed skin; after exercise or EVA.",
+   "yes": "A-HEAT",
+   "no": "X1"
+  },
+  "X1": {
+   "s": "X",
+   "q": "Was there an EVA or a pressure drop in the last 24 hours?",
+   "hint": "EVA = spacewalk. Pressure: cabin or suit.",
+   "yes": "X1a",
+   "no": "X2",
+   "setFlag": "EVA"
+  },
+  "X1a": {
+   "s": "X",
+   "q": "Is there a deep, aching pain in the joints?",
+   "hint": "Especially shoulder, elbow, knee.",
+   "yes": "A-DCS",
+   "no": "X1c"
+  },
+  "X1c": {
+   "s": "X",
+   "q": "Is there numbness or weakness in an arm or leg?",
+   "hint": "If only in the fingertips, answer No.",
+   "yes": "A-DCS",
+   "no": "X1d"
+  },
+  "X1d": {
+   "s": "X",
+   "q": "Is there shortness of breath, cough or a stabbing pain in the chest?",
+   "yes": "A-DCS",
+   "no": "X1e"
+  },
+  "X1e": {
+   "s": "X",
+   "q": "Are there mottled, purplish patches on the skin?",
+   "yes": "A-DCS",
+   "no": "X2"
+  },
+  "X2": {
+   "s": "X",
+   "q": "Was there a radiation or solar storm warning?",
+   "yes": "X2a",
+   "no": "M0",
+   "setFlag": "RAD"
+  },
+  "X2a": {
+   "s": "X",
+   "q": "Did nausea or vomiting start after the warning?",
+   "yes": "A-RAD",
+   "no": "X2b"
+  },
+  "X2b": {
+   "s": "X",
+   "q": "Is there sunburn-like redness on the skin?",
+   "hint": "If No, radiation follow-up steps are added to the result.",
+   "yes": "A-RAD",
+   "no": "M0"
+  },
+  "M0": {
+   "s": "M",
+   "q": "Is the problem in the hands or fingers?",
+   "hint": "Bruising under a nail, lifted nail, glove rubbing.",
+   "yes": "C-EVA-HAND",
+   "no": "M1",
+   "onlyIf": "EVA"
+  },
+  "M1": {
+   "s": "M",
+   "q": "Did it start after a blow, fall, cut or burn?",
+   "hint": "Strain during exercise also counts.",
+   "yes": "TR1",
+   "no": "M2"
+  },
+  "M2": {
+   "s": "M",
+   "q": "Is the problem in the head, face, eyes, throat or teeth?",
+   "yes": "BY1",
+   "no": "M3"
+  },
+  "M3": {
+   "s": "M",
+   "q": "Is there a rash, redness or itching on the skin?",
+   "yes": "CL1",
+   "no": "M4"
+  },
+  "M4": {
+   "s": "M",
+   "q": "Is the problem in the abdomen, the flanks or when urinating?",
+   "yes": "K1",
+   "no": "M5"
+  },
+  "M5": {
+   "s": "M",
+   "q": "Is there pain or numbness in an arm, leg, the back or the joints?",
+   "yes": "KS1",
+   "no": "M6"
+  },
+  "M6": {
+   "s": "M",
+   "q": "Is it a general illness affecting the whole body?",
+   "hint": "Dizziness, nausea, shortness of breath, extreme tiredness.",
+   "yes": "GN1",
+   "no": "M7"
+  },
+  "M7": {
+   "s": "M",
+   "q": "Is the problem about sleep, mood or stress?",
+   "yes": "PS1",
+   "no": "C-UNCLEAR"
+  },
+  "TR1": {
+   "s": "B",
+   "q": "Is it a burn?",
+   "hint": "Hot surface, hot water, electricity, chemical.",
+   "yes": "TR1a",
+   "no": "TR2"
+  },
+  "TR1a": {
+   "s": "B",
+   "q": "Is it an electrical or chemical burn?",
+   "yes": "C-BURN-SEVERE",
+   "no": "TR1b"
+  },
+  "TR1b": {
+   "s": "B",
+   "q": "Is the burn larger than the palm of the hand?",
+   "yes": "C-BURN-SEVERE",
+   "no": "TR1c"
+  },
+  "TR1c": {
+   "s": "B",
+   "q": "Is the burn on the face, hand, a joint or the genital area?",
+   "yes": "C-BURN-SEVERE",
+   "no": "TR1d"
+  },
+  "TR1d": {
+   "s": "B",
+   "q": "Is the burned skin white, brown or numb?",
+   "yes": "C-BURN-SEVERE",
+   "no": "C-BURN-MINOR"
+  },
+  "TR2": {
+   "s": "B",
+   "q": "Was the blow to the head?",
+   "yes": "TR2a",
+   "no": "TR3"
+  },
+  "TR2a": {
+   "s": "B",
+   "q": "Did they pass out briefly, or not remember the event?",
+   "yes": "C-HEAD-SEVERE",
+   "no": "TR2b"
+  },
+  "TR2b": {
+   "s": "B",
+   "q": "Is there vomiting, worsening headache or confusion?",
+   "yes": "C-HEAD-SEVERE",
+   "no": "C-HEAD-MINOR"
+  },
+  "TR3": {
+   "s": "B",
+   "q": "Was the blow to the eye?",
+   "yes": "C-EYE-TRAUMA",
+   "no": "TR4"
+  },
+  "TR4": {
+   "s": "B",
+   "q": "Is there a cut, scrape or puncture?",
+   "yes": "TR4a",
+   "no": "TR5"
+  },
+  "TR4a": {
+   "s": "B",
+   "q": "Did the bleeding stop after pressing for 10 minutes?",
+   "yes": "TR4b",
+   "no": "C-CUT-DEEP",
+   "unsure": "no"
+  },
+  "TR4b": {
+   "s": "B",
+   "q": "Is the cut deep, or are its edges gaping?",
+   "hint": "It is deep if fat tissue or muscle is visible.",
+   "yes": "C-CUT-DEEP",
+   "no": "TR4c"
+  },
+  "TR4c": {
+   "s": "B",
+   "q": "Is the cut on the face, hand or a joint?",
+   "yes": "C-CUT-DEEP",
+   "no": "C-CUT-MINOR"
+  },
+  "TR5": {
+   "s": "B",
+   "q": "Is the injured part deformed, or is bone sticking out?",
+   "yes": "C-FRACTURE-OPEN",
+   "no": "TR5a"
+  },
+  "TR5a": {
+   "s": "B",
+   "q": "Can the injured part not be moved at all?",
+   "yes": "C-FRACTURE-OPEN",
+   "no": "TR6"
+  },
+  "TR6": {
+   "s": "B",
+   "q": "Is there sharp pain at one point when pressing on the bone?",
+   "yes": "C-FRACTURE-SUSPECTED",
+   "no": "TR6a"
+  },
+  "TR6a": {
+   "s": "B",
+   "q": "Is swelling or bruising growing quickly?",
+   "yes": "C-FRACTURE-SUSPECTED",
+   "no": "C-STRAIN"
+  },
+  "BY1": {
+   "s": "B",
+   "q": "Is the problem in the eye?",
+   "yes": "EY1",
+   "no": "BY2"
+  },
+  "EY1": {
+   "s": "B",
+   "q": "Is the eye red, stinging or watering?",
+   "yes": "EY1a",
+   "no": "EY2"
+  },
+  "EY1a": {
+   "s": "B",
+   "q": "Do they wear contact lenses?",
+   "hint": "Also Yes if worn in the last 24 hours.",
+   "yes": "C-LENS",
+   "no": "EY1b"
+  },
+  "EY1b": {
+   "s": "B",
+   "q": "Could dust or a particle have got into the eye?",
+   "yes": "C-EYE-FOREIGN-BODY",
+   "no": "C-EYE-IRRITATION"
+  },
+  "EY2": {
+   "s": "B",
+   "q": "Has vision slowly blurred over days?",
+   "hint": "Especially if reading up close became harder.",
+   "yes": "C-SANS",
+   "no": "EY2a"
+  },
+  "EY2a": {
+   "s": "B",
+   "q": "Is there a shadow or blind spot in the vision?",
+   "yes": "C-SANS",
+   "no": "C-EYE-GENERAL"
+  },
+  "BY2": {
+   "s": "B",
+   "q": "Is there pain in a tooth, the gums or the jaw?",
+   "yes": "DS1",
+   "no": "BY3"
+  },
+  "DS1": {
+   "s": "B",
+   "q": "Is there swelling of the face or jaw?",
+   "yes": "C-TOOTH-ABSCESS",
+   "no": "DS1a"
+  },
+  "DS1a": {
+   "s": "B",
+   "q": "Is there a pus-filled bump on the gum or a bad taste in the mouth?",
+   "yes": "C-TOOTH-ABSCESS",
+   "no": "DS2"
+  },
+  "DS2": {
+   "s": "B",
+   "q": "Did a tooth break or a filling fall out?",
+   "yes": "C-TOOTH-FRACTURE",
+   "no": "C-TOOTH-PAIN"
+  },
+  "BY3": {
+   "s": "B",
+   "q": "Is there a blocked or runny nose, sore throat or cough?",
+   "yes": "R1",
+   "no": "BY4"
+  },
+  "R1": {
+   "s": "B",
+   "q": "Is there fever or chills?",
+   "hint": "The panel fills this in from core temperature.",
+   "yes": "R1a",
+   "no": "R1b"
+  },
+  "R1b": {
+   "s": "B",
+   "q": "Is there a sore throat or yellow-green discharge?",
+   "hint": "This separates infection from the fluid shift of spaceflight.",
+   "yes": "R1a",
+   "no": "R2"
+  },
+  "R1a": {
+   "s": "B",
+   "q": "Is there shortness of breath or wheezing in the chest?",
+   "yes": "C-BREATHING-SEVERE",
+   "no": "C-BREATHING",
+   "noWhen": {
+    "node": "R1",
+    "is": "yes",
+    "to": "R1c"
+   }
+  },
+  "R1c": {
+   "s": "B",
+   "q": "Has the fever lasted longer than 3 days?",
+   "yes": "C-BREATHING-SEVERE",
+   "no": "C-BREATHING"
+  },
+  "R2": {
+   "s": "B",
+   "q": "Did it start after contact with a new substance or food?",
+   "hint": "With sneezing, itching, watery discharge.",
+   "yes": "C-ALLERGY-MILD",
+   "no": "C-CONGESTION"
+  },
+  "BY4": {
+   "s": "B",
+   "q": "Is headache the main complaint?",
+   "yes": "H1a",
+   "no": "BY5"
+  },
+  "H1a": {
+   "s": "B",
+   "q": "Were they working somewhere with poor ventilation?",
+   "hint": "Or if cabin CO₂ looks high. The panel fills this in from CO₂.",
+   "yes": "C-CO2",
+   "no": "H2"
+  },
+  "H2": {
+   "s": "B",
+   "q": "Is there shortness of breath or bluish lips?",
+   "yes": "C-HYPOXIA",
+   "no": "H3"
+  },
+  "H3": {
+   "s": "B",
+   "q": "Is the nose blocked, or does the face feel full?",
+   "yes": "C-CONGESTION",
+   "no": "H4"
+  },
+  "H4": {
+   "s": "B",
+   "q": "Is vision blurred?",
+   "yes": "C-SANS",
+   "no": "H5"
+  },
+  "H5": {
+   "s": "B",
+   "q": "Did it start after lack of sleep or stress?",
+   "yes": "C-SLEEP",
+   "no": "C-HEADACHE"
+  },
+  "BY5": {
+   "s": "B",
+   "q": "Is there a feeling of fullness in the face or ears?",
+   "yes": "C-CONGESTION",
+   "no": "C-UNCLEAR"
+  },
+  "CL1": {
+   "s": "B",
+   "q": "Did the rash appear after a new medication, food or cream?",
+   "yes": "C-ALLERGY-MILD",
+   "no": "CL1a"
+  },
+  "CL1a": {
+   "s": "B",
+   "q": "Is it itchy raised bumps?",
+   "hint": "Bumps that look like mosquito bites (hives).",
+   "yes": "C-ALLERGY-MILD",
+   "no": "CL3"
+  },
+  "CL3": {
+   "s": "B",
+   "q": "Is the rash hot, swollen or spreading?",
+   "yes": "C-SKIN-INFECTION",
+   "no": "CL3a"
+  },
+  "CL3a": {
+   "s": "B",
+   "q": "Is there pus or fever?",
+   "yes": "C-SKIN-INFECTION",
+   "no": "CL4"
+  },
+  "CL4": {
+   "s": "B",
+   "q": "Are there painful, fluid-filled blisters?",
+   "hint": "Often on one side of the body, in a band.",
+   "yes": "C-SKIN-BLISTER",
+   "no": "C-DERMATITIS"
+  },
+  "K1": {
+   "s": "B",
+   "q": "Is there burning or pain when urinating?",
+   "yes": "K1a",
+   "no": "K1b"
+  },
+  "K1b": {
+   "s": "B",
+   "q": "Urinating very often, or is the urine cloudy?",
+   "yes": "K1a",
+   "no": "K2"
+  },
+  "K1a": {
+   "s": "B",
+   "q": "Is there also fever, shivering or flank pain?",
+   "yes": "C-UTI-SEVERE",
+   "no": "C-UTI"
+  },
+  "K2": {
+   "s": "B",
+   "q": "Does the pain spread from one flank towards the groin?",
+   "hint": "Pain that comes in waves and makes you writhe.",
+   "yes": "C-KIDNEY-STONE",
+   "no": "K2a"
+  },
+  "K2a": {
+   "s": "B",
+   "q": "Is the urine pink or red?",
+   "yes": "C-KIDNEY-STONE",
+   "no": "K3"
+  },
+  "K3": {
+   "s": "B",
+   "q": "Is the pain in the lower right of the abdomen?",
+   "hint": "It may have started around the navel and moved to the lower right.",
+   "yes": "C-APPENDICITIS",
+   "no": "K4"
+  },
+  "K4": {
+   "s": "B",
+   "q": "No bowel movement for several days?",
+   "yes": "K4a",
+   "no": "K5"
+  },
+  "K4a": {
+   "s": "B",
+   "q": "Is there vomiting, or is no gas passing either?",
+   "yes": "A-ABDOMEN",
+   "no": "C-CONSTIPATION"
+  },
+  "K5": {
+   "s": "B",
+   "q": "Did the nausea start in the first days of flight?",
+   "hint": "Or after gravity changed.",
+   "yes": "C-ADAPTATION",
+   "no": "K5a"
+  },
+  "K5a": {
+   "s": "B",
+   "q": "Does the nausea get worse with head movements?",
+   "yes": "C-ADAPTATION",
+   "no": "C-ABDOMEN-GENERAL"
+  },
+  "KS1": {
+   "s": "B",
+   "q": "Did the pain or numbness start after an EVA?",
+   "yes": "KS1a",
+   "no": "KS2",
+   "onlyIf": "EVA"
+  },
+  "KS1a": {
+   "s": "B",
+   "q": "Is the numbness only in the fingertips?",
+   "hint": "The points where the glove presses.",
+   "yes": "KS1b",
+   "no": "A-DCS"
+  },
+  "KS1b": {
+   "s": "B",
+   "q": "Is the numbness fading?",
+   "yes": "C-EVA-HAND",
+   "no": "A-DCS"
+  },
+  "KS2": {
+   "s": "B",
+   "q": "Is it low back pain?",
+   "yes": "KS2a",
+   "no": "KS3"
+  },
+  "KS2a": {
+   "s": "B",
+   "q": "Does pulling the knees to the chest relieve it?",
+   "yes": "C-BACK",
+   "no": "KS3"
+  },
+  "KS3": {
+   "s": "B",
+   "q": "Is there sharp pain at one point over a bone?",
+   "hint": "Even if no blow is remembered. Bones weaken in space.",
+   "yes": "C-FRACTURE-SUSPECTED",
+   "no": "KS4"
+  },
+  "KS4": {
+   "s": "B",
+   "q": "Did it start after exercise or a sudden movement?",
+   "yes": "C-STRAIN",
+   "no": "KS5"
+  },
+  "KS5": {
+   "s": "B",
+   "q": "Does the pain shoot down an arm or leg?",
+   "hint": "Like an electric shock.",
+   "yes": "C-NERVE",
+   "no": "C-MUSCLE-GENERAL"
+  },
+  "GN1": {
+   "s": "B",
+   "q": "Is it the first days of flight, or did gravity just change?",
+   "hint": "E.g. landing on the Moon / Mars, return to Earth.",
+   "yes": "GN1a",
+   "no": "GN2"
+  },
+  "GN1a": {
+   "s": "B",
+   "q": "Does nausea or dizziness get worse when the head moves?",
+   "yes": "C-ADAPTATION",
+   "no": "GN2"
+  },
+  "GN2": {
+   "s": "B",
+   "q": "Is there shortness of breath or getting tired quickly?",
+   "yes": "GN2a",
+   "no": "GN3"
+  },
+  "GN2a": {
+   "s": "B",
+   "q": "Do others have the same symptom?",
+   "hint": "The panel fills this in from the symptom logs.",
+   "yes": "ENV",
+   "no": "GN2b"
+  },
+  "GN2b": {
+   "s": "B",
+   "q": "Are cabin oxygen and pressure values normal?",
+   "hint": "The panel fills this in from the cabin sensors.",
+   "yes": "C-HYPOXIA",
+   "no": "A-ENVIRONMENT",
+   "unsure": "no"
+  },
+  "GN3": {
+   "s": "B",
+   "q": "Is there fever or shivering?",
+   "hint": "The panel fills this in from core temperature.",
+   "yes": "GN3a",
+   "no": "GN4"
+  },
+  "GN3a": {
+   "s": "B",
+   "q": "Is there burning when urinating?",
+   "yes": "C-UTI-SEVERE",
+   "no": "C-FEVER"
+  },
+  "GN4": {
+   "s": "B",
+   "q": "Is there a feeling of palpitations?",
+   "yes": "C-PALPITATIONS",
+   "no": "GN5"
+  },
+  "GN5": {
+   "s": "B",
+   "q": "Is there also sleeplessness, unhappiness or anxiety?",
+   "yes": "PS1",
+   "no": "C-FATIGUE"
+  },
+  "PS1": {
+   "s": "B",
+   "q": "Are there thoughts of self-harm?",
+   "yes": "A-PSYCH",
+   "no": "PS2"
+  },
+  "PS2": {
+   "s": "B",
+   "q": "Are there attacks of sudden fear and not being able to breathe?",
+   "yes": "C-PANIC",
+   "no": "PS3"
+  },
+  "PS3": {
+   "s": "B",
+   "q": "Trouble sleeping for several days?",
+   "yes": "C-SLEEP",
+   "no": "PS3a"
+  },
+  "PS3a": {
+   "s": "B",
+   "q": "Is there extreme sleepiness during the day?",
+   "yes": "C-SLEEP",
+   "no": "PS4"
+  },
+  "PS4": {
+   "s": "B",
+   "q": "Low mood or lack of interest on most days for two weeks?",
+   "yes": "C-LOW-MOOD",
+   "no": "C-STRESS"
+  }
+ },
+ "radFollowUp": {
+  "title": "Radiation alert, no symptoms (C-RAD-MONITOR) – added because a radiation warning was confirmed",
+  "steps": [
+   "Stay in the sheltered area while the alert lasts.",
+   "Record dosimeter values (the panel records them itself).",
+   "Watch for nausea, vomiting and skin redness for 48 hours; the panel asks every 12 hours.",
+   "If a symptom starts, write down the time; the panel opens A-RAD."
+  ],
+  "comms": "Dose values, duration of the alert."
+ },
+ "selfHarmNote": "Do not leave the person alone; assign a companion.",
+ "lists": {
+  "_about": "Team review, 15 Nov 2026: '10 or fewer screens' for non-emergency branches without new questions. Each list is a run of the document's own questions where every 'No' leads to the next one; the panel shows the run as one screen ('tap the first that fits'). Tapping item k records No for the items above it and Yes for k, through the same engine, so the path is the document's path. 'Not sure' asks the run one by one as before. The context screen shows X1 and X2 together, each with its follow-up symptoms.",
+  "runs": [
+   [
+    "M0",
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5",
+    "M6",
+    "M7"
+   ],
+   [
+    "TR1",
+    "TR2",
+    "TR3",
+    "TR4",
+    "TR5",
+    "TR5a",
+    "TR6",
+    "TR6a"
+   ],
+   [
+    "TR1a",
+    "TR1b",
+    "TR1c",
+    "TR1d"
+   ],
+   [
+    "BY1",
+    "BY2",
+    "BY3",
+    "BY4",
+    "BY5"
+   ],
+   [
+    "H1a",
+    "H2",
+    "H3",
+    "H4",
+    "H5"
+   ],
+   [
+    "CL1",
+    "CL1a",
+    "CL3",
+    "CL3a",
+    "CL4"
+   ],
+   [
+    "K1",
+    "K1b",
+    "K2",
+    "K2a",
+    "K3",
+    "K4",
+    "K5",
+    "K5a"
+   ],
+   [
+    "KS1",
+    "KS2",
+    "KS3",
+    "KS4",
+    "KS5"
+   ],
+   [
+    "GN1",
+    "GN2",
+    "GN3",
+    "GN4",
+    "GN5"
+   ],
+   [
+    "PS1",
+    "PS2",
+    "PS3",
+    "PS3a",
+    "PS4"
+   ],
+   [
+    "EY1",
+    "EY2",
+    "EY2a"
+   ],
+   [
+    "DS1",
+    "DS1a",
+    "DS2"
+   ],
+   [
+    "R1",
+    "R1b",
+    "R2"
+   ]
+  ],
+  "context": [
+   {
+    "gate": "X1",
+    "run": [
+     "X1a",
+     "X1c",
+     "X1d",
+     "X1e"
+    ]
+   },
+   {
+    "gate": "X2",
+    "run": [
+     "X2a",
+     "X2b"
+    ]
+   }
+  ]
+ }
+}

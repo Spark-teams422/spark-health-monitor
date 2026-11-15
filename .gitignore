@@ -1,0 +1,9 @@
+node_modules/
+dist/
+data/raw/
+.DS_Store
+*.zip
+__pycache__/
+*.pyc
+.claude/
+desktop/release/

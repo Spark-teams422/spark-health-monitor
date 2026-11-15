@@ -1,0 +1,23 @@
+{
+ "source": "BodyParts3D 4.0 (CC BY 4.0) via Human Atlas (MIT), sampled to a point cloud by scripts/build_hologram.mjs",
+ "count": 81000,
+ "min": [
+  -0.33073946267428556,
+  0.0003376855750161936,
+  -0.14476939105788894
+ ],
+ "max": [
+  0.33064353610104247,
+  1.7192591991108683,
+  0.14520097839717308
+ ],
+ "groups": [
+  "skin",
+  "skeleton",
+  "heart",
+  "lungs",
+  "brain",
+  "vessels",
+  "abdomen"
+ ]
+}

@@ -1,0 +1,116 @@
+{
+ "_about": "Radiation planning layer along the route (team document 'Route Radiation Planning Layer', 15 Nov 2026). FORECAST only: it says when and where, never raises an alarm; the dosimeter (MEASURED) always wins; solar particle events are LIVE only (GOES). AE9/AP9, OLTARIS and SGP4 were not run: the forecast here is a SAMPLE model calibrated as noted per case. Colour classes use the radiation document's dose-rate caution limit; no new limit is made here.",
+ "classes": {
+  "_about": "Forecast absorbed dose rate (mGy/day) compared with the radiation_rate caution limit (mSv/day, deep space) at quality factor Q = 1 (open item: the document does not say how to convert). The radiation document has no red dose-rate limit, so the forecast has no red class.",
+  "qualityFactor": 1,
+  "env": "deepSpace"
+ },
+ "extraRatio": {
+  "value": 1,
+  "openItem": "ε (extra = belt component above ε × GCR) is the team's choice; the document gives none. Placeholder 1."
+ },
+ "requiredWindowH": 6.5,
+ "leo": {
+  "label": "Low Earth orbit (ISS type)",
+  "altitudeKm": 420,
+  "inclinationDeg": 51.6,
+  "earthRadiusKm": 6371,
+  "muKm3s2": 398600.4418,
+  "siderealDayS": 86164.1,
+  "gcrUGyH": {
+   "low": 1.5,
+   "high": 11.1,
+   "basis": "ISS DOSTEL-1 RadLab week (real, April 2022): minimum and 90th percentile of the 5-minute means = low- and high-latitude background"
+  },
+  "saa": {
+   "latDeg": -26,
+   "lonDeg": -55,
+   "refYear": 2022,
+   "driftWestDegPerYear": 0.3,
+   "sigmaLatDeg": 9,
+   "sigmaLonDeg": 18,
+   "peakUGyH": 450,
+   "basis": "SAMPLE outline and peak (DOSTEL maximum 605 µGy/h); drift 0.3°/year west (SPENVIS)"
+  },
+  "uncertainty": {
+   "gcr": 0.1,
+   "trapped": 0.2,
+   "basis": "ISSCREM agreement with measurements: ±10 % GCR, ±20 % trapped"
+  },
+  "referenceShield": "ISS interior, DOSTEL position"
+ },
+ "moon": {
+  "label": "Lunar transit (Artemis I type)",
+  "durationDays": 25.5,
+  "tliHour": 1.5,
+  "moonDistanceKm": 384400,
+  "outboundHours": 120,
+  "returnStartDay": 20.5,
+  "innerBeltKm": [
+   1000,
+   6000
+  ],
+  "outerBeltKm": [
+   13000,
+   60000
+  ],
+  "beltBasis": "approximate belt altitudes (SAMPLE); trajectory profile SAMPLE",
+  "innerPeakUGyMin": {
+   "mostShielded": 69,
+   "leastShielded": 287,
+   "basis": "Artemis I, inner belt: 69 µGy/min most shielded vs 240 and 287 µGy/min least shielded (George et al. 2024)"
+  },
+  "attitudeFactor": {
+   "value": 0.5,
+   "basis": "changing the spacecraft attitude in the belts cut dose rates by about 50 % (NASA)"
+  },
+  "lunarShadow": {
+   "factor": 0.667,
+   "fromKm": 330000,
+   "basis": "GCR about one third lower near the Moon (George et al. 2024); start distance SAMPLE"
+  },
+  "outerBeltNote": "Outer (electron) belt: no dose number in the source; shaded only",
+  "uncertainty": 0.2
+ },
+ "mars": {
+  "label": "Mars transit",
+  "gcrMSvDay": "radiation.normalRateMSvDay",
+  "uncertainty": 0.1,
+  "note": "Almost only GCR; no position-bound hot spot to paint (document). Solar particle events cannot be mapped: live GOES strip only.",
+  "sepThresholdPfu": 10,
+  "sepBasis": "NOAA SWPC: SEP event threshold ≥10 MeV at 10 pfu"
+ },
+ "evaRisk": {
+  "_about": "EVA radiation risk index (ERI), team design 15 Nov 2026 (proposal, not a NASA standard). Built only from numbers the project already has: the radiation document's caution dose rate and its operational steps 0.5 / 0.8 / 1.0, the person's dose ledger, and the NOAA SEP threshold. ERI = max(R_route, R_dose, R_sep).",
+  "parts": {
+   "route": "R_route = highest upper-bound FORECAST dose rate during the planned EVA ÷ the radiation document's caution dose rate (1.3 mSv/day, deep space). 1.0 = the EVA reaches the dose rate the document already calls high.",
+   "dose": "R_dose = the person's worst ratio in the radiation ledger (career, 30-day organ, solar event) — someone close to a limit should not add EVA dose.",
+   "sep": "R_sep = 1.0 while a solar particle event runs (GOES ≥10 MeV at or above 10 pfu, NOAA SWPC); 0 otherwise."
+  },
+  "limit": 0.8,
+  "limitNote": "Limit = 0.8, the radiation document's Warning step: at or above it no EVA is planned in that window and the measures below are taken.",
+  "levels": [
+   {
+    "id": "green",
+    "word": "Normal",
+    "advice": "No radiation objection to EVA in this window."
+   },
+   {
+    "id": "yellow",
+    "word": "Caution",
+    "advice": "EVA possible: tell the planner, keep the EVA short, stay near the airlock or shielding, watch the dosimeter."
+   },
+   {
+    "id": "orange",
+    "word": "Warning",
+    "advice": "Do not plan EVA in this window: move it to the next green window and prepare the shelter."
+   },
+   {
+    "id": "red",
+    "word": "Critical",
+    "advice": "No EVA: crew outside return to the airlock now; everyone goes to the most shielded place (shelter)."
+   }
+  ],
+  "authority": "Decision support only. The final go / no-go is given by the flight director with the flight surgeon and the radiation officer (on a deep-space mission without real-time link: the commander with the crew medical officer)."
+ }
+}

@@ -1,0 +1,80 @@
+{
+  "name": "astronaut-health-monitor-desktop",
+  "productName": "Astronaut Health Monitor",
+  "version": "1.0.0",
+  "description": "Desktop app of the Astronaut Health Monitor (NASA Space Apps Challenge 2026, Spark Team)",
+  "author": "Spark Team",
+  "license": "Apache-2.0",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "web": "cd .. && npm ci && npm run build",
+    "start": "electron .",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win",
+    "dist:linux": "electron-builder --linux"
+  },
+  "build": {
+    "appId": "org.spark-team.astronaut-health-monitor",
+    "files": [
+      "main.js",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../dist",
+        "to": "web"
+      },
+      "../LICENSE",
+      "../NOTICE",
+      "../THIRD_PARTY_LICENSES.txt"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "artifactName": "Astronaut-Health-Monitor-${version}-${os}-${arch}.${ext}",
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ],
+      "category": "public.app-category.medical",
+      "identity": "-",
+      "hardenedRuntime": false
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "category": "Science"
+    }
+  },
+  "devDependencies": {
+    "electron": "^45.3.2",
+    "electron-builder": "^26.18.0"
+  }
+}

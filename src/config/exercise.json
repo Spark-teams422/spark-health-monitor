@@ -1,0 +1,22 @@
+{
+  "_about": "Default weekly exercise plan from 'Astronaut Exercise Program' (15 Nov 2026), based on the ISS Sprint protocol (English et al. 2020) and its Supplementary Tables 3 and 4 (downloaded 15 Nov 2026): interval rest times, exercises of each resistance day, 4 x 12 / 4 x 8 / 4 x 6. Day layout is the document's arrangement, not a published NASA calendar. Loads are the median ISS session loads (npj Microgravity 2023: squat 181 lb, deadlift 192 lb, heel raise 239 lb, bench press 122 lb) converted to kg; bench press and row are the document's proposal. Each crew member's plan can be edited on the Physical screen.",
+  "sessions": [
+    { "day": "Mon", "type": "resistance", "label": "ARED – high volume (squat, heel raise, Romanian deadlift)", "sets": 4, "reps": 12, "intensity": "4th set very hard", "minutes": 70 },
+    { "day": "Mon", "type": "aerobic", "label": "Continuous cardio (T2 or CEVIS), 4–6 h later", "sets": 1, "reps": 1, "intensity": "75 % VO2peak, 30 min", "minutes": 30 },
+    { "day": "Tue", "type": "aerobic", "label": "Short intervals", "sets": 8, "reps": 1, "intensity": "30 s at 100 % VO2peak, 15 s rest", "minutes": 30 },
+    { "day": "Wed", "type": "resistance", "label": "ARED – moderate volume (sumo squat, heel raise, deadlift)", "sets": 4, "reps": 8, "intensity": "4th set end of 8 reps hard", "minutes": 70 },
+    { "day": "Wed", "type": "aerobic", "label": "Continuous cardio, 4–6 h later", "sets": 1, "reps": 1, "intensity": "75 % VO2peak, 30 min", "minutes": 30 },
+    { "day": "Thu", "type": "aerobic", "label": "Medium intervals", "sets": 6, "reps": 1, "intensity": "2 min at 70/80/90/100/90/80 % VO2peak, 2 min rest", "minutes": 30 },
+    { "day": "Fri", "type": "resistance", "label": "ARED – low volume, heavy (single-leg squat, heel raise, Romanian and sumo deadlift)", "sets": 4, "reps": 6, "intensity": "4th set end of 6 reps hard", "minutes": 70 },
+    { "day": "Fri", "type": "aerobic", "label": "Continuous cardio, 4–6 h later", "sets": 1, "reps": 1, "intensity": "75 % VO2peak, 30 min", "minutes": 30 },
+    { "day": "Sat", "type": "aerobic", "label": "Long intervals", "sets": 4, "reps": 1, "intensity": "4 min at 90 % VO2peak, 3 min rest", "minutes": 30 },
+    { "day": "Sun", "type": "rest", "label": "Rest or light movement", "sets": 0, "reps": 0, "intensity": "—", "minutes": 0 }
+  ],
+  "lifts": [
+    { "name": "Squat", "target": "Hip, thigh, lumbar spine", "loadKg": 82 },
+    { "name": "Deadlift", "target": "Hip, pelvis, lumbar spine, back", "loadKg": 87 },
+    { "name": "Heel raise", "target": "Calf (soleus, gastrocnemius), calcaneus", "loadKg": 108 },
+    { "name": "Bench press (proposal)", "target": "Chest, upper body", "loadKg": 55 },
+    { "name": "Row (proposal)", "target": "Back, upper body", "loadKg": 40, "sets": 3 }
+  ]
+}

@@ -1,0 +1,3257 @@
+{
+ "source": "NASA OSDR OSD-569 (Complete Blood Count) and OSD-575 (Comprehensive Metabolic Panel), SpaceX Inspiration4, 4 civilian crew, 3-day flight",
+ "retrieved": "2026-11-14",
+ "timepoints": "L-92 \u2026 L-3 before launch, FD = flight day, R+1 \u2026 R+194 after return",
+ "rows": [
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-92",
+   "value": 14.1,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-92",
+   "value": 42.5,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-44",
+   "value": 14.9,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-44",
+   "value": 45.1,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-3",
+   "value": 14.7,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-3",
+   "value": 44.5,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+1",
+   "value": 14.7,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+1",
+   "value": 43.6,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+45",
+   "value": 14.3,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+45",
+   "value": 43.3,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+82",
+   "value": 15.7,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+82",
+   "value": 46.1,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+194",
+   "value": 14.1,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+194",
+   "value": 41.8,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-92",
+   "value": 13.2,
+   "unit": "g/dL",
+   "range": [
+    "11.7",
+    "15.5"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-92",
+   "value": 40.8,
+   "unit": "%",
+   "range": [
+    "35",
+    "45"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-44",
+   "value": 12.8,
+   "unit": "g/dL",
+   "range": [
+    "11.7",
+    "15.5"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-44",
+   "value": 37.8,
+   "unit": "%",
+   "range": [
+    "35",
+    "45"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-3",
+   "value": 11.5,
+   "unit": "g/dL",
+   "range": [
+    "11.7",
+    "15.5"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-3",
+   "value": 35.9,
+   "unit": "%",
+   "range": [
+    "35",
+    "45"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+1",
+   "value": 12.1,
+   "unit": "g/dL",
+   "range": [
+    "11.7",
+    "15.5"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+1",
+   "value": 36.4,
+   "unit": "%",
+   "range": [
+    "35",
+    "45"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+45",
+   "value": 12.2,
+   "unit": "g/dL",
+   "range": [
+    "11.7",
+    "15.5"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+45",
+   "value": 37.1,
+   "unit": "%",
+   "range": [
+    "35",
+    "45"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+82",
+   "value": 11.5,
+   "unit": "g/dL",
+   "range": [
+    "11.7",
+    "15.5"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+82",
+   "value": 34.7,
+   "unit": "%",
+   "range": [
+    "35",
+    "45"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+194",
+   "value": 12.7,
+   "unit": "g/dL",
+   "range": [
+    "11.7",
+    "15.5"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+194",
+   "value": 38.3,
+   "unit": "%",
+   "range": [
+    "35",
+    "45"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-92",
+   "value": 17.0,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-92",
+   "value": 49.1,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-44",
+   "value": 16.6,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-44",
+   "value": 50.0,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-3",
+   "value": 16.8,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-3",
+   "value": 49.0,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+1",
+   "value": 16.5,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+1",
+   "value": 48.3,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+45",
+   "value": 16.8,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+45",
+   "value": 49.0,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+82",
+   "value": 16.4,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+82",
+   "value": 47.5,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+194",
+   "value": 16.5,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+194",
+   "value": 48.0,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-92",
+   "value": 13.2,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-92",
+   "value": 40.7,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-44",
+   "value": 14.4,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-44",
+   "value": 42.6,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-3",
+   "value": 13.3,
+   "unit": "g/dL",
+   "range": [
+    "13.2",
+    "17.1"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-3",
+   "value": 41.6,
+   "unit": "%",
+   "range": [
+    "38.5",
+    "50"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+45",
+   "value": 14.6,
+   "unit": "g/dL",
+   "range": [
+    "11.7",
+    "15.5"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+45",
+   "value": 44.3,
+   "unit": "%",
+   "range": [
+    "35",
+    "45"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+82",
+   "value": 14.4,
+   "unit": "g/dL",
+   "range": [
+    "11.7",
+    "15.5"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+82",
+   "value": 44.6,
+   "unit": "%",
+   "range": [
+    "35",
+    "45"
+   ]
+  },
+  {
+   "metric": "lab_hemoglobin",
+   "analyte": "Hemoglobin",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+194",
+   "value": 13.3,
+   "unit": "g/dL",
+   "range": [
+    "11.7",
+    "15.5"
+   ]
+  },
+  {
+   "metric": "lab_hematocrit",
+   "analyte": "Hematocrit",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+194",
+   "value": 40.4,
+   "unit": "%",
+   "range": [
+    "35",
+    "45"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-92",
+   "value": 83.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-92",
+   "value": 25.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-92",
+   "value": 1.24,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-92",
+   "value": 141.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-92",
+   "value": 4.6,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-92",
+   "value": 104.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-92",
+   "value": 9.7,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-44",
+   "value": 80.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-44",
+   "value": 19.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-44",
+   "value": 1.1,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-44",
+   "value": 139.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-44",
+   "value": 4.2,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-44",
+   "value": 101.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-44",
+   "value": 10.0,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-3",
+   "value": 69.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-3",
+   "value": 20.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-3",
+   "value": 1.37,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-3",
+   "value": 142.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-3",
+   "value": 3.9,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-3",
+   "value": 102.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "L-3",
+   "value": 9.6,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+1",
+   "value": 90.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+1",
+   "value": 18.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+1",
+   "value": 1.12,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+1",
+   "value": 138.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+1",
+   "value": 4.4,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+1",
+   "value": 102.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+1",
+   "value": 9.7,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+45",
+   "value": 84.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+45",
+   "value": 15.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+45",
+   "value": 1.11,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+45",
+   "value": 138.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+45",
+   "value": 4.0,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+45",
+   "value": 100.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+45",
+   "value": 9.6,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+82",
+   "value": 91.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+82",
+   "value": 22.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+82",
+   "value": 1.25,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+82",
+   "value": 140.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+82",
+   "value": 4.3,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+82",
+   "value": 101.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+82",
+   "value": 10.1,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+194",
+   "value": 87.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+194",
+   "value": 28.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+194",
+   "value": 1.29,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+194",
+   "value": 137.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+194",
+   "value": 4.3,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+194",
+   "value": 102.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C001",
+   "sex": "M",
+   "time": "R+194",
+   "value": 9.4,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-92",
+   "value": 69.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-92",
+   "value": 14.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-92",
+   "value": 0.83,
+   "unit": "mg/dL",
+   "range": [
+    "0.5",
+    "1.05"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-92",
+   "value": 142.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-92",
+   "value": 3.9,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-92",
+   "value": 103.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-92",
+   "value": 10.2,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.4"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-44",
+   "value": 72.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-44",
+   "value": 16.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-44",
+   "value": 0.88,
+   "unit": "mg/dL",
+   "range": [
+    "0.5",
+    "1.05"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-44",
+   "value": 141.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-44",
+   "value": 4.0,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-44",
+   "value": 103.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-44",
+   "value": 9.7,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.4"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-3",
+   "value": 78.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-3",
+   "value": 17.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-3",
+   "value": 0.96,
+   "unit": "mg/dL",
+   "range": [
+    "0.5",
+    "1.05"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-3",
+   "value": 143.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-3",
+   "value": 3.8,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-3",
+   "value": 106.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "L-3",
+   "value": 9.3,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.4"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+1",
+   "value": 83.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+1",
+   "value": 20.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+1",
+   "value": 0.95,
+   "unit": "mg/dL",
+   "range": [
+    "0.5",
+    "1.05"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+1",
+   "value": 137.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+1",
+   "value": 3.5,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+1",
+   "value": 103.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+1",
+   "value": 9.2,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.4"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+45",
+   "value": 44.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+45",
+   "value": 19.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+45",
+   "value": 1.02,
+   "unit": "mg/dL",
+   "range": [
+    "0.5",
+    "1.05"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+45",
+   "value": 140.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+45",
+   "value": 4.1,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+45",
+   "value": 104.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+45",
+   "value": 9.3,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.4"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+82",
+   "value": 77.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+82",
+   "value": 16.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+82",
+   "value": 0.82,
+   "unit": "mg/dL",
+   "range": [
+    "0.5",
+    "1.05"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+82",
+   "value": 141.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+82",
+   "value": 3.7,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+82",
+   "value": 105.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+82",
+   "value": 9.7,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.4"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+194",
+   "value": 84.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+194",
+   "value": 18.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+194",
+   "value": 1.02,
+   "unit": "mg/dL",
+   "range": [
+    "0.5",
+    "1.05"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+194",
+   "value": 138.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+194",
+   "value": 4.4,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+194",
+   "value": 104.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C002",
+   "sex": "F",
+   "time": "R+194",
+   "value": 9.5,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.4"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-92",
+   "value": 100.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-92",
+   "value": 22.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-92",
+   "value": 1.14,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-92",
+   "value": 138.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-92",
+   "value": 4.2,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-92",
+   "value": 102.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-92",
+   "value": 10.0,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-44",
+   "value": 83.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-44",
+   "value": 19.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-44",
+   "value": 1.08,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-44",
+   "value": 140.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-44",
+   "value": 4.2,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-44",
+   "value": 103.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-44",
+   "value": 10.1,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-3",
+   "value": 56.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-3",
+   "value": 19.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-3",
+   "value": 1.13,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-3",
+   "value": 141.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-3",
+   "value": 3.7,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-3",
+   "value": 103.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "L-3",
+   "value": 10.2,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+1",
+   "value": 97.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+1",
+   "value": 26.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+1",
+   "value": 1.15,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+1",
+   "value": 140.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+1",
+   "value": 4.0,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+1",
+   "value": 105.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+1",
+   "value": 9.8,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+45",
+   "value": 43.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+45",
+   "value": 21.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+45",
+   "value": 1.08,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+45",
+   "value": 139.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+45",
+   "value": 5.9,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+45",
+   "value": 102.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+45",
+   "value": 9.8,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+82",
+   "value": 80.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+82",
+   "value": 16.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+82",
+   "value": 1.11,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+82",
+   "value": 140.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+82",
+   "value": 4.2,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+82",
+   "value": 103.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+82",
+   "value": 10.0,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+194",
+   "value": 84.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+194",
+   "value": 27.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+194",
+   "value": 1.31,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+194",
+   "value": 141.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+194",
+   "value": 3.8,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+194",
+   "value": 105.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C004",
+   "sex": "M",
+   "time": "R+194",
+   "value": 9.8,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-92",
+   "value": 77.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-92",
+   "value": 17.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-92",
+   "value": 1.0,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-92",
+   "value": 139.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-92",
+   "value": 3.7,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-92",
+   "value": 102.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-92",
+   "value": 9.3,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-44",
+   "value": 62.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-44",
+   "value": 19.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-44",
+   "value": 1.03,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-44",
+   "value": 139.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-44",
+   "value": 3.5,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-44",
+   "value": 99.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-44",
+   "value": 10.3,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-3",
+   "value": 75.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-3",
+   "value": 26.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-3",
+   "value": 1.08,
+   "unit": "mg/dL",
+   "range": [
+    "0.6",
+    "1.35"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-3",
+   "value": 138.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-3",
+   "value": 3.3,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-3",
+   "value": 101.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "L-3",
+   "value": 9.5,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.3"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+45",
+   "value": 36.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+45",
+   "value": 19.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+45",
+   "value": 0.94,
+   "unit": "mg/dL",
+   "range": [
+    "0.5",
+    "1.1"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+45",
+   "value": 136.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+45",
+   "value": 4.4,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+45",
+   "value": 97.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+45",
+   "value": 9.6,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.2"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+82",
+   "value": 80.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+82",
+   "value": 23.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+82",
+   "value": 0.89,
+   "unit": "mg/dL",
+   "range": [
+    "0.5",
+    "1.1"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+82",
+   "value": 138.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+82",
+   "value": 3.7,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+82",
+   "value": 102.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+82",
+   "value": 10.0,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.2"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+194",
+   "value": 73.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+194",
+   "value": 28.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+194",
+   "value": 1.1,
+   "unit": "mg/dL",
+   "range": [
+    "0.5",
+    "1.1"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+194",
+   "value": 137.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+194",
+   "value": 3.8,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+194",
+   "value": 101.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+194",
+   "value": 9.6,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.2"
+   ]
+  },
+  {
+   "metric": "lab_glucose",
+   "analyte": "Glucose",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+1",
+   "value": 103.0,
+   "unit": "mg/dL",
+   "range": [
+    "65",
+    "99"
+   ]
+  },
+  {
+   "metric": "lab_bun",
+   "analyte": "Urea Nitrogen (Bun)",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+1",
+   "value": 21.0,
+   "unit": "mg/dL",
+   "range": [
+    "7",
+    "25"
+   ]
+  },
+  {
+   "metric": "lab_creatinine",
+   "analyte": "Creatinine",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+1",
+   "value": 0.89,
+   "unit": "mg/dL",
+   "range": [
+    "0.5",
+    "1.1"
+   ]
+  },
+  {
+   "metric": "lab_sodium",
+   "analyte": "Sodium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+1",
+   "value": 137.0,
+   "unit": "mmol/L",
+   "range": [
+    "135",
+    "146"
+   ]
+  },
+  {
+   "metric": "lab_potassium",
+   "analyte": "Potassium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+1",
+   "value": 3.0,
+   "unit": "mmol/L",
+   "range": [
+    "3.5",
+    "5.3"
+   ]
+  },
+  {
+   "metric": "lab_chloride",
+   "analyte": "Chloride",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+1",
+   "value": 103.0,
+   "unit": "mmol/L",
+   "range": [
+    "98",
+    "110"
+   ]
+  },
+  {
+   "metric": "lab_calcium_total",
+   "analyte": "Calcium",
+   "subject": "C003",
+   "sex": "F",
+   "time": "R+1",
+   "value": 9.4,
+   "unit": "mg/dL",
+   "range": [
+    "8.6",
+    "10.2"
+   ]
+  }
+ ]
+}

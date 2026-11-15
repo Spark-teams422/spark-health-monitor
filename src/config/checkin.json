@@ -1,0 +1,70 @@
+{
+  "_about": "Daily check-in, one question per screen. Content from 'Periodic Health Tasks Checklist' section 6 (symptom diary, every evening, about 5 minutes) and section 11 (sleep diary, every morning), plus the mental check-in of 'Mental Health notes'. Levels live in thresholds.json -> symptomDiary.",
+  "morningUntilHour": 12,
+  "redFlags": [
+    "Chest pain",
+    "Shortness of breath",
+    "Fainting",
+    "Very severe headache",
+    "Sudden loss of vision",
+    "Weakness in an arm or leg",
+    "Bleeding",
+    "Severe abdominal pain",
+    "Thoughts of harming yourself"
+  ],
+  "sleep": {
+    "bedtime": "When did you go to bed?",
+    "wakeups": "How many times did you wake up?",
+    "rested": "Do you feel rested?",
+    "pattern": "What made the night hard?",
+    "patternOptions": [
+      "Hard to fall asleep",
+      "Woke up during the night",
+      "Woke up too early"
+    ]
+  },
+  "topics": [
+    "Headache",
+    "Vision",
+    "Sleep",
+    "Appetite",
+    "Nausea",
+    "Stool",
+    "Urine",
+    "Skin",
+    "Muscle / joint pain",
+    "Mood"
+  ],
+  "complaint": {
+    "where": "Where on the body?",
+    "started": "When did it start?",
+    "startedOptions": [
+      "Today",
+      "Yesterday",
+      "2–3 days ago",
+      "Longer"
+    ],
+    "severity": "How strong is it? 0 none · 10 worst",
+    "helped": "What helped?"
+  },
+  "actions": {
+    "green": "Saved. Nothing to do now.",
+    "yellow": "Write the severity twice a day and report it in the weekly private medical conference. If it gets worse, report it at once.",
+    "red": "Call the crew medical officer now. If there is a link, start a medical conference with the flight surgeon today. Thoughts of self-harm need an emergency conference at once: do not stay alone."
+  },
+  "reminders": {
+    "_about": "Gamification (Space Apps challenge: 'a gamification system to help astronauts engage with tasks that support their health'; team idea 15 Nov 2026): a reminder to the astronaut when a check-in part is still open at this hour (UTC), and a 'don't break the chain' streak. Not medical; display settings.",
+    "morningHour": 8,
+    "eveningHour": 20,
+    "milestones": [
+      3,
+      7,
+      14,
+      30,
+      60,
+      100
+    ],
+    "chainDays": 21,
+    "sampleDays": 45
+  }
+}

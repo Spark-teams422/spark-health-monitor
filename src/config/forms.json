@@ -1,0 +1,33 @@
+{
+  "_about": "Fields of the personal input forms (Step 4a). The item list comes from Project Roadmap; the individual fields are a working proposal and can be edited here without touching code.",
+  "exercise": { "title": "Exercise", "fields": [
+    { "name": "type", "label": "Type", "type": "select", "options": ["Running (T2)", "Cycle ergometer", "Resistive", "Other"] },
+    { "name": "minutes", "label": "Duration", "type": "number", "unit": "min", "min": 1 },
+    { "name": "intensity", "label": "Intensity", "type": "select", "options": ["Light", "Moderate", "Hard"] },
+    { "name": "notes", "label": "Notes", "type": "text", "optional": true } ] },
+  "meal": { "title": "Meal", "fields": [
+    { "name": "meal", "label": "Meal", "type": "select", "options": ["Breakfast", "Lunch", "Dinner", "Snack"] },
+    { "name": "description", "label": "What did you eat?", "type": "text" },
+    { "name": "eaten", "label": "Portion eaten", "type": "select", "options": ["All", "Most", "Half", "Little"] },
+    { "name": "kcal", "label": "Energy", "type": "number", "unit": "kcal", "min": 0, "optional": true } ] },
+  "mass": { "title": "Body mass", "fields": [
+    { "name": "kg", "label": "Body mass", "type": "number", "unit": "kg", "min": 30, "step": 0.1 } ] },
+  "water": { "title": "Water", "fields": [
+    { "name": "ml", "label": "Amount", "type": "number", "unit": "mL", "min": 1 } ] },
+  "medication": { "title": "Medication", "fields": [
+    { "name": "name", "label": "Medication", "type": "text" },
+    { "name": "dose", "label": "Dose", "type": "text" },
+    { "name": "reason", "label": "Reason", "type": "text", "optional": true } ] },
+  "symptom": { "title": "Symptom", "fields": [
+    { "name": "symptom", "label": "Symptom", "type": "select", "options": ["Headache", "Dizziness", "Nausea", "Shortness of breath", "Chest pain", "Fatigue", "Vision change", "Other"] },
+    { "name": "severity", "label": "Severity (1 mild – 10 worst)", "type": "number", "min": 1, "max": 10 },
+    { "name": "notes", "label": "Notes", "type": "text", "optional": true } ] },
+  "menstrual": { "title": "Menstrual cycle", "fields": [
+    { "name": "cycleDay", "label": "Cycle day", "type": "number", "min": 1 },
+    { "name": "flow", "label": "Flow", "type": "select", "options": ["None", "Light", "Medium", "Heavy"] },
+    { "name": "notes", "label": "Notes", "type": "text", "optional": true } ] },
+  "value": { "title": "Other value", "fields": [
+    { "name": "name", "label": "What was measured?", "type": "text" },
+    { "name": "value", "label": "Value", "type": "number", "step": "any" },
+    { "name": "unit", "label": "Unit", "type": "text", "optional": true } ] }
+}

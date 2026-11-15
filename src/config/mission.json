@@ -1,0 +1,159 @@
+{
+  "name": "Mars Transit",
+  "startDate": "2026-06-26T00:00:00Z",
+  "endDate": "2027-01-21T00:00:00Z",
+  "environment": "deepSpace",
+  "sim": {
+    "startDay": 142,
+    "startHour": 21,
+    "minutesPerTick": 1,
+    "tickMs": 1000,
+    "speeds": [1, 5, 10, 30],
+    "defaultSpeed": 5,
+    "seed": 42
+  },
+  "dayNight": {
+    "_about": "Panel light (day) / dark (night) by the mission clock (UTC) so the crew can tell the time of day; the EVA screen is always dark. A display setting, not a medical value.",
+    "dayFromHour": 7,
+    "nightFromHour": 21
+  },
+  "criticalTasks": [
+    {
+      "label": "EVA",
+      "crewIds": [
+        "A3",
+        "A1"
+      ],
+      "day": 143,
+      "hour": 3
+    }
+  ],
+  "evaPlan": {
+    "_about": "Sample EVA timeline: planned duration and mean metabolic rate (moderate class, NTRS 20220009964); the cumulative-effort axis is energy so far / planned energy.",
+    "plannedHours": 6.5,
+    "plannedMetBtuh": 900,
+    "_aboutTasks": "Sample EVA task list (not medical; replaced by the mission's EVA timeline). Edited on the EVA screen outside an EVA, ticked off during it.",
+    "tasks": [
+      "Suit check and egress at the airlock",
+      "Walk to the work site",
+      "Deploy the weather station",
+      "Collect three core samples",
+      "Photograph the site",
+      "Inspect the solar array",
+      "Walk back and ingress"
+    ]
+  },
+  "crew": [
+    {
+      "id": "A1",
+      "priorDoseMSv": 118,
+      "sex": "female",
+      "name": "Elena Vasquez",
+      "role": "Commander",
+      "age": 44,
+      "hrvBaseline": {
+        "mean": 47.0,
+        "sd": 5
+      },
+      "preflight": {
+        "source": "Body mass and height: profile C of the team document Astronaut Nutrition List (fictional). VO2peak, urine calcium, NTX, leg press and knee torque: sample values. HRV baseline mean: MMASH user_22 night rMSSD.",
+        "massKg": 70.0,
+        "vo2peak": 40.5,
+        "urineCaMgDay": 170,
+        "ntx": 42,
+        "legPressN": 920,
+        "kneeTorqueNm": 205,
+        "heightM": 1.65
+      }
+    },
+    {
+      "id": "A2",
+      "priorDoseMSv": 42,
+      "sex": "male",
+      "name": "Kenji Morita",
+      "role": "Crew Medical Officer",
+      "age": 39,
+      "hrvBaseline": {
+        "mean": 52.6,
+        "sd": 6
+      },
+      "preflight": {
+        "source": "Body mass and height: profile A of the team document Astronaut Nutrition List (fictional). VO2peak, urine calcium, NTX, leg press and knee torque: sample values. HRV baseline mean: MMASH user_20 night rMSSD.",
+        "massKg": 82.0,
+        "vo2peak": 48.0,
+        "urineCaMgDay": 185,
+        "ntx": 45,
+        "legPressN": 1210,
+        "kneeTorqueNm": 262,
+        "heightM": 1.8
+      }
+    },
+    {
+      "id": "A3",
+      "priorDoseMSv": 0,
+      "sex": "female",
+      "name": "Amara Okoye",
+      "role": "Flight Engineer",
+      "age": 36,
+      "hrvBaseline": {
+        "mean": 41.2,
+        "sd": 5
+      },
+      "preflight": {
+        "source": "Body mass and height: profile B of the team document Astronaut Nutrition List (fictional). VO2peak, urine calcium, NTX, leg press and knee torque: sample values. HRV baseline mean: MMASH user_8 night rMSSD.",
+        "massKg": 62.0,
+        "vo2peak": 42.0,
+        "urineCaMgDay": 150,
+        "ntx": 38,
+        "legPressN": 860,
+        "kneeTorqueNm": 190,
+        "heightM": 1.68
+      }
+    },
+    {
+      "id": "A4",
+      "priorDoseMSv": 65,
+      "sex": "male",
+      "name": "Lukas Brandt",
+      "role": "Mission Specialist",
+      "age": 41,
+      "hrvBaseline": {
+        "mean": 50.8,
+        "sd": 5
+      },
+      "preflight": {
+        "source": "Body mass and height: sample values. VO2peak, urine calcium, NTX, leg press and knee torque: sample values. HRV baseline mean: MMASH user_3 night rMSSD.",
+        "massKg": 78.0,
+        "vo2peak": 46.0,
+        "urineCaMgDay": 195,
+        "ntx": 47,
+        "legPressN": 1130,
+        "kneeTorqueNm": 248,
+        "heightM": 1.78
+      }
+    },
+    {
+      "id": "A5",
+      "priorDoseMSv": 0,
+      "sex": "female",
+      "name": "Priya Raman",
+      "role": "Science Officer",
+      "age": 34,
+      "hrvBaseline": {
+        "mean": 59.8,
+        "sd": 6
+      },
+      "preflight": {
+        "source": "Body mass and height: sample values. VO2peak, urine calcium, NTX, leg press and knee torque: sample values. HRV baseline mean: MMASH user_16 night rMSSD.",
+        "massKg": 60.0,
+        "vo2peak": 43.0,
+        "urineCaMgDay": 160,
+        "ntx": 40,
+        "legPressN": 800,
+        "kneeTorqueNm": 176,
+        "heightM": 1.66
+      }
+    }
+  ],
+  "_about_preflight": "Preflight baselines (\"own normal\") per crew member; real values where a dataset exists (see each source)."
+}

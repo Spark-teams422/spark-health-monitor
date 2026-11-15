@@ -1,0 +1,1859 @@
+{
+  "_about": "Single source of truth for every Caution (yellow) / Critical (red) limit. Values are copied only from the team's spec documents (internal, written in Turkish, not published in this repository). Never edit a medical value here without a spec document change. Screens must not hard-code any of these numbers.",
+  "general": {
+    "confirmWindowMin": 5,
+    "consecutiveCount": 3,
+    "averageWindowHours": 24,
+    "source": "Main Panel Alarm Checklist, 'five rules that apply to every alarm' 1-2: yellow needs 24 h average or 3 consecutive readings out of range; red is verified with a second reading within 5 min unless the person feels unwell."
+  },
+  "metrics": {
+    "bp_systolic": {
+      "label": "Blood pressure (systolic)",
+      "unit": "mmHg",
+      "scope": "crew",
+      "caution": [
+        {
+          "op": ">=",
+          "value": 130,
+          "label": "high"
+        },
+        {
+          "op": "<=",
+          "value": 100,
+          "label": "low"
+        }
+      ],
+      "critical": [
+        {
+          "op": ">",
+          "value": 180,
+          "label": "high"
+        },
+        {
+          "op": "<=",
+          "value": 90,
+          "label": "low"
+        }
+      ],
+      "cautionConfirm": "trend",
+      "criticalConfirm": true,
+      "source": "Main Panel Alarm Checklist: high yellow 130/80 or above, red upper >180; low yellow upper <=100, red upper <=90. Orthostatic drop (upper -20 / lower -10 on standing) is also red; needs a stand test, not evaluated from a single reading.",
+      "explain": "Blood pressure is the force of blood on the vessel walls; the first number is the upper (systolic) value. In space it reads 8–10 units lower than on Earth, so high values are taken more seriously here."
+    },
+    "bp_diastolic": {
+      "label": "Blood pressure (diastolic)",
+      "unit": "mmHg",
+      "scope": "crew",
+      "caution": [
+        {
+          "op": ">=",
+          "value": 80,
+          "label": "high"
+        }
+      ],
+      "critical": [
+        {
+          "op": ">",
+          "value": 120,
+          "label": "high"
+        }
+      ],
+      "cautionConfirm": "trend",
+      "criticalConfirm": true,
+      "source": "Main Panel Alarm Checklist: high yellow 130/80 or above, red lower >120.",
+      "explain": "The second blood pressure number is the lower (diastolic) value, measured between heartbeats."
+    },
+    "hrv": {
+      "label": "HRV (rMSSD)",
+      "unit": "ms",
+      "scope": "crew",
+      "caution": [
+        {
+          "type": "belowBaseline",
+          "sdFactor": 0.5,
+          "avgDays": 7,
+          "minReadings": 3,
+          "label": "7-day average below personal normal band"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<",
+          "value": 15,
+          "label": "absolute low"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": true,
+      "openItems": [
+        "Checklist says red is 'below 15-19 ms'; 15 is used because it is red under either reading. Team must confirm the exact value.",
+        "Red rule 'far below personal normal for 3 days in a row' is not quantified in the documents; not implemented."
+      ],
+      "source": "Main Panel Alarm Checklist (HRV); normal band = personal baseline mean +/- 0.5 SD (SWC), 7-day average, at least 3 valid readings per week (Chart Blueprint, 'middle panel limits').",
+      "explain": "HRV shows how flexibly the time between heartbeats changes. It is a sign of fatigue, stress and recovery, and is compared with your own normal, not with other people."
+    },
+    "spo2": {
+      "label": "SpO₂",
+      "unit": "%",
+      "scope": "crew",
+      "caution": [
+        {
+          "op": "<=",
+          "value": 94,
+          "label": "low"
+        },
+        {
+          "type": "suddenDrop",
+          "value": 3,
+          "label": "sudden 3-point drop"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<=",
+          "value": 91,
+          "label": "low"
+        }
+      ],
+      "emergency": {
+        "op": "<=",
+        "value": 85,
+        "label": "very urgent"
+      },
+      "cautionConfirm": "trend",
+      "criticalConfirm": true,
+      "source": "Main Panel Alarm Checklist: yellow <=94 % or sudden 3-point drop; red <=91 % (<=85 % very urgent). Normal 94-98 %.",
+      "explain": "The finger sensor shows the share of oxygen in the blood. The normal range is 94–98 %. If more than one person drops, the problem is the cabin air, not the person."
+    },
+    "body_temp": {
+      "label": "Body temperature",
+      "unit": "°C",
+      "scope": "crew",
+      "caution": [
+        {
+          "op": ">=",
+          "value": 38.5,
+          "restingOnly": true,
+          "label": "high (resting)"
+        },
+        {
+          "op": "<=",
+          "value": 36,
+          "label": "low"
+        }
+      ],
+      "critical": [
+        {
+          "op": ">=",
+          "value": 40,
+          "label": "high (any time)"
+        },
+        {
+          "op": ">=",
+          "value": 39.1,
+          "restingOnly": true,
+          "label": "high (resting)"
+        },
+        {
+          "op": "<=",
+          "value": 35,
+          "label": "low"
+        }
+      ],
+      "cautionConfirm": "trend",
+      "criticalConfirm": true,
+      "source": "Main Panel Alarm Checklist: high yellow >=38.5 °C resting; red >=39.1 °C resting or >=40.0 °C any time; low yellow <=36.0 °C, red <=35.0 °C.",
+      "explain": "On long missions resting body temperature settles near 38 °C, so the 38 °C fever limit used on Earth does not apply here."
+    },
+    "radiation_rate": {
+      "label": "Radiation (current)",
+      "unit": "mSv/day",
+      "scope": "cabin",
+      "caution": [
+        {
+          "op": ">",
+          "value": 1.3,
+          "env": "deepSpace",
+          "label": "high (deep space)"
+        },
+        {
+          "op": ">",
+          "value": 0.8,
+          "env": "surface",
+          "label": "high (surface)"
+        }
+      ],
+      "critical": [
+        {
+          "type": "flag",
+          "flag": "sepStarted",
+          "label": "solar particle event started"
+        }
+      ],
+      "cautionConfirm": "trend",
+      "criticalConfirm": false,
+      "source": "Main Panel Alarm Checklist: yellow >1.3 mSv/day (deep space) or >0.8 mSv/day (surface); red when a solar event starts or a single event reaches 50 mSv."
+    },
+    "radiation_event_dose": {
+      "label": "Radiation (event dose)",
+      "unit": "mSv",
+      "scope": "cabin",
+      "caution": [],
+      "critical": [
+        {
+          "op": ">=",
+          "value": 50,
+          "label": "shelter threshold"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Main Panel Alarm Checklist: single event >=50 mSv is red (shelter threshold proposed by the draft; event limit 250 mSv)."
+    },
+    "radiation_cumulative": {
+      "label": "Radiation (cumulative)",
+      "unit": "mSv",
+      "scope": "cabin",
+      "caution": [
+        {
+          "op": ">=",
+          "value": 480,
+          "label": "high"
+        }
+      ],
+      "critical": [
+        {
+          "op": ">=",
+          "value": 600,
+          "label": "career limit"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Main Panel Alarm Checklist: cumulative yellow >=480 mSv, red 600 mSv (career limit)."
+    },
+    "cabin_co2": {
+      "label": "Cabin CO₂",
+      "unit": "mmHg",
+      "scope": "cabin",
+      "caution": [
+        {
+          "op": ">=",
+          "value": 2.5,
+          "window": {
+            "kind": "mean",
+            "minutes": 60
+          },
+          "label": "1-h average high"
+        }
+      ],
+      "critical": [
+        {
+          "op": ">",
+          "value": 3,
+          "window": {
+            "kind": "mean",
+            "minutes": 60
+          },
+          "label": "1-h average high"
+        }
+      ],
+      "emergency": {
+        "op": ">",
+        "value": 4,
+        "label": "emergency level"
+      },
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Single Story Plan 'threshold decision' + Chart Blueprint panel C (NASA OCHMO-TB-004): yellow >=2.5, red 1-h average >3.0 mmHg; 4.0 mmHg stays as the emergency level."
+    },
+    "cabin_pio2": {
+      "label": "Cabin O₂ (inspired, PIO₂)",
+      "unit": "mmHg",
+      "scope": "cabin",
+      "caution": [
+        {
+          "op": "<",
+          "value": 145,
+          "label": "low"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<",
+          "value": 127,
+          "label": "low"
+        }
+      ],
+      "cautionConfirm": "trend",
+      "criticalConfirm": false,
+      "source": "Chart Blueprint panel B (NASA-STD-3001 Vol 2, Table 6.2-1): normal 145-155 mmHg, yellow 127-144 (proposal), red below 127. PIO₂ = (cabin pressure - 47) x O₂ fraction. No upper limit is given in the documents."
+    },
+    "cabin_pressure": {
+      "label": "Cabin pressure",
+      "unit": "psia",
+      "scope": "cabin",
+      "caution": [
+        {
+          "op": "<",
+          "value": 14.4,
+          "label": "low"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<",
+          "value": 14,
+          "label": "low"
+        }
+      ],
+      "cautionConfirm": "trend",
+      "criticalConfirm": false,
+      "source": "Team build guide (drafted with AI assistance), Table A: normal 14.4-14.9 psia, yellow 14.0-14.39, red <14.0."
+    },
+    "cabin_temp": {
+      "label": "Cabin temperature",
+      "unit": "°C",
+      "scope": "cabin",
+      "caution": [
+        {
+          "op": "<",
+          "value": 20,
+          "label": "low"
+        },
+        {
+          "op": ">",
+          "value": 25,
+          "label": "high"
+        }
+      ],
+      "critical": [],
+      "cautionConfirm": "trend",
+      "criticalConfirm": false,
+      "openItems": [
+        "Red is defined only as 'life-support system failure' with no numeric value; no red threshold is configured."
+      ],
+      "source": "Main Panel Alarm Checklist + team build guide, Table A: suitable range 20-25 °C; outside range is yellow."
+    },
+    "eva_margin": {
+      "label": "Return margin",
+      "unit": "min",
+      "scope": "eva",
+      "caution": [
+        {
+          "op": "<",
+          "value": 60,
+          "label": "low"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<=",
+          "value": 30,
+          "label": "backup O₂ reserve"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M1: Caution margin <60 min; Critical margin <=30 min (EMU backup life support = 30 min).",
+      "action": {
+        "caution": "Low-priority tasks can be skipped.",
+        "critical": "Start the return now. Take no new task."
+      }
+    },
+    "eva_suit_pressure": {
+      "label": "Suit pressure",
+      "unit": "psi",
+      "scope": "eva",
+      "caution": [
+        {
+          "op": "<",
+          "value": 4.05,
+          "label": ">0.25 psi below 4.3 psi set point"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<",
+          "value": 3.8,
+          "label": "low"
+        }
+      ],
+      "absoluteLimit": {
+        "op": "<",
+        "value": 3.36,
+        "label": "absolute lower limit (PIO₂ 127 mmHg)"
+      },
+      "cautionSilent": true,
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "openItems": [
+        "Thresholds are computed for the EMU (4.3 psi, 100 % O₂); suit type is not confirmed."
+      ],
+      "source": "EVA Panel v2, M4: silent Caution <4.05 psi; Critical <3.8 psi; absolute lower limit 3.36 psi.",
+      "action": {
+        "critical": "End the EVA, switch to backup O₂, return. Check for decompression symptoms."
+      }
+    },
+    "eva_pico2": {
+      "label": "Inspired CO₂ (PICO₂)",
+      "unit": "mmHg",
+      "scope": "eva",
+      "caution": [
+        {
+          "op": ">",
+          "value": 8,
+          "window": {
+            "kind": "sustained",
+            "minutes": 15
+          },
+          "label": "high for 15 min"
+        }
+      ],
+      "critical": [
+        {
+          "op": ">",
+          "value": 15,
+          "label": "high"
+        }
+      ],
+      "absoluteLimit": {
+        "op": ">=",
+        "value": 20,
+        "label": "absolute limit, max 1 h"
+      },
+      "cautionSilent": true,
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "openItems": [
+        "NASA-STD-3001 Table 11.3-1 numeric limits could not be accessed; the Caution threshold must be compared with that table."
+      ],
+      "source": "EVA Panel v2, M5: silent Caution >8 mmHg for 15 min; Critical >15 mmHg; absolute limit 20 mmHg for at most 1 h.",
+      "action": {
+        "critical": "End the EVA and return. Check for headache, shortness of breath, confusion."
+      }
+    },
+    "eva_metabolic_rate": {
+      "label": "Metabolic rate",
+      "unit": "BTU/h",
+      "scope": "eva",
+      "caution": [
+        {
+          "op": ">",
+          "value": 1200,
+          "window": {
+            "kind": "mean",
+            "minutes": 15
+          },
+          "label": "15-min average high"
+        }
+      ],
+      "critical": [
+        {
+          "op": ">",
+          "value": 2100,
+          "window": {
+            "kind": "sustained",
+            "minutes": 5
+          },
+          "label": "high for 5 min"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M6: Caution 15-min average >1200 BTU/h; Critical >2100 BTU/h for 5 min.",
+      "action": {
+        "caution": "Take a rest break, slow down, increase cooling.",
+        "critical": "Stop the activity. If values do not fall at rest, end the EVA."
+      }
+    },
+    "eva_heart_rate": {
+      "label": "Heart rate",
+      "unit": "bpm",
+      "scope": "eva",
+      "caution": [
+        {
+          "op": ">",
+          "value": 140,
+          "label": "high"
+        }
+      ],
+      "critical": [
+        {
+          "type": "pctHrMax",
+          "value": 90,
+          "label": "above 90 % of personal HRmax"
+        },
+        {
+          "type": "flag",
+          "flag": "metabolicMismatch",
+          "label": "HR >140 while metabolic rate <1000 BTU/h (mismatch)"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M6: Caution HR >140; Critical HR >90 % personal HRmax (measured, else 208 - 0.7 x age). Critical also on mismatch: HR >140 while primary-source metabolic rate <1000 BTU/h.",
+      "action": {
+        "caution": "Take a rest break, slow down, increase cooling.",
+        "critical": "Stop the activity. If values do not fall at rest, end the EVA."
+      }
+    },
+    "eva_orthostatic_hr_rise": {
+      "label": "Orthostatic HR rise (upright, low effort, 10 min)",
+      "unit": "bpm",
+      "scope": "eva",
+      "caution": [
+        {
+          "op": ">=",
+          "value": 30,
+          "label": "postural tachycardia"
+        }
+      ],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M8: Caution HR rise >=30 within 10 min upright at low effort or mild symptom; Critical on pre-syncope symptom or systolic drop >=20 / diastolic >=10 mmHg (symptom-driven, wired in Step 3).",
+      "action": {
+        "caution": "Slow down, drink water, rest 5 min."
+      }
+    },
+    "eva_o2": {
+      "label": "O₂ / backup O₂",
+      "unit": "min",
+      "scope": "eva",
+      "caution": [
+        {
+          "type": "flag",
+          "flag": "backupO2NotFull",
+          "label": "backup O₂ not full before EVA"
+        },
+        {
+          "type": "flag",
+          "flag": "leakSuspected",
+          "label": "O₂ use 20 % above metabolic expectation – leak suspected"
+        }
+      ],
+      "critical": [
+        {
+          "type": "flag",
+          "flag": "backupO2Active",
+          "label": "backup O₂ engaged"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M2: Caution backup O₂ not full before EVA, or O₂ use 20 % above metabolic expectation for 10 min while pressure falls (leak suspicion, proposal); Critical backup O₂ engaged for any reason.",
+      "action": {
+        "caution": "Partner: visual leak check. Time budget recalculated.",
+        "critical": "Start the return now. Keep a controlled pace: cooling is reduced on backup O₂."
+      }
+    },
+    "eva_return_by": {
+      "label": "Return by",
+      "unit": "min",
+      "scope": "eva",
+      "caution": [],
+      "critical": [
+        {
+          "op": "<=",
+          "value": 0,
+          "label": "no time left before return"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M1: Critical when return-by time D <= 0 (D keeps the return consumption and the 30-min reserve aside).",
+      "action": {
+        "critical": "Start the return now."
+      }
+    },
+    "eva_suit_time": {
+      "label": "Total suit time",
+      "unit": "h",
+      "scope": "eva",
+      "caution": [
+        {
+          "op": ">=",
+          "value": 12,
+          "label": "long suit time (proposal)"
+        }
+      ],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M1: Caution total suit time >= 12 h (proposal).",
+      "action": {
+        "caution": "Plan the return."
+      }
+    },
+    "eva_suit_time_with_return": {
+      "label": "Suit time incl. return",
+      "unit": "h",
+      "scope": "eva",
+      "caution": [],
+      "critical": [
+        {
+          "op": ">",
+          "value": 14,
+          "label": "would exceed 14 h"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M1 / NASA-STD-3001: total time in suit must not exceed 14 h including the return.",
+      "action": {
+        "critical": "Start the return now."
+      }
+    },
+    "eva_drink_rate": {
+      "label": "Drinking water intake",
+      "unit": "mL/h",
+      "scope": "eva",
+      "caution": [
+        {
+          "op": "<",
+          "value": 240,
+          "window": {
+            "kind": "mean",
+            "minutes": 120
+          },
+          "label": "2-h average low (proposal)"
+        }
+      ],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M3: Caution when drinking <240 mL/h (2-h average, proposal). Never Critical on its own.",
+      "action": {
+        "caution": "Drink water from the bag."
+      }
+    },
+    "eva_drink_bag": {
+      "label": "Drink bag",
+      "unit": "%",
+      "scope": "eva",
+      "caution": [
+        {
+          "op": "<",
+          "value": 20,
+          "label": "low (proposal)"
+        }
+      ],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M3: Caution when the bag is below 20 % (proposal).",
+      "action": {
+        "caution": "Drink bag is low."
+      }
+    },
+    "eva_pico2_excess": {
+      "label": "Inspired CO₂ above expected",
+      "unit": "mmHg",
+      "scope": "eva",
+      "caution": [
+        {
+          "op": ">",
+          "value": 3,
+          "label": "scrubber degradation suspected (proposal)"
+        }
+      ],
+      "critical": [],
+      "cautionSilent": true,
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M5: measured PICO₂ more than 3 mmHg above the value expected from metabolic rate (Kim et al. 2020 curve) -> silent Caution (proposal)."
+    },
+    "eva_core_rise": {
+      "label": "Core temperature rise since EVA start",
+      "unit": "°C",
+      "scope": "eva",
+      "caution": [
+        {
+          "op": ">=",
+          "value": 0.6,
+          "label": "heat load"
+        }
+      ],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M7: Caution core temperature +0.6 °C above the EVA-start reference (first 10 min average).",
+      "action": {
+        "caution": "Increase cooling, slow down, drink water."
+      }
+    },
+    "eva_skin_rise": {
+      "label": "Skin temperature rise since EVA start",
+      "unit": "°C",
+      "scope": "eva",
+      "caution": [
+        {
+          "op": ">=",
+          "value": 1.4,
+          "label": "heat load"
+        }
+      ],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M7: Caution skin temperature +1.4 °C above the EVA-start reference.",
+      "action": {
+        "caution": "Increase cooling, slow down, drink water."
+      }
+    },
+    "eva_core_temp": {
+      "label": "Core temperature",
+      "unit": "°C",
+      "scope": "eva",
+      "caution": [],
+      "critical": [
+        {
+          "op": ">=",
+          "value": 39.5,
+          "label": "high (proposal)"
+        },
+        {
+          "type": "flag",
+          "flag": "coolingOff",
+          "label": "cooling is off"
+        }
+      ],
+      "emergency": {
+        "op": ">=",
+        "value": 40,
+        "label": "emergency menu: overheating"
+      },
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M7: Critical core >= 39.5 °C (proposal) or cooling off; >= 40.0 °C opens the overheating emergency instruction.",
+      "action": {
+        "critical": "Stop the activity, set cooling to maximum, start the return."
+      }
+    },
+    "eva_ori": {
+      "label": "Orthostatic risk (ORI)",
+      "unit": "",
+      "scope": "eva",
+      "caution": [
+        {
+          "op": ">=",
+          "value": 60,
+          "label": "elevated"
+        },
+        {
+          "type": "flag",
+          "flag": "orthoMildSymptom",
+          "label": "mild symptom (dizziness, weakness)"
+        }
+      ],
+      "critical": [
+        {
+          "op": ">=",
+          "value": 80,
+          "label": "high"
+        },
+        {
+          "type": "flag",
+          "flag": "preSyncope",
+          "label": "pre-syncope symptom"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M8 (surface EVA only): Caution ORI >= 60 or mild symptom; Critical ORI >= 80 or pre-syncope symptom. ORI from the G-TRANSIT v1.1 suit mode.",
+      "action": {
+        "caution": "Slow down, drink water, rest 5 min.",
+        "critical": "Sit or lie down now. Partner comes to you. Consider ending the EVA."
+      }
+    },
+    "eva_radiation": {
+      "label": "Radiation (suit dosimeter)",
+      "unit": "µGy/h",
+      "scope": "eva",
+      "caution": [
+        {
+          "type": "flag",
+          "flag": "sepWarning",
+          "label": "solar proton warning"
+        }
+      ],
+      "critical": [
+        {
+          "type": "flag",
+          "flag": "sepStarted",
+          "label": "solar event started"
+        },
+        {
+          "type": "flag",
+          "flag": "doseRateRed",
+          "label": "dose rate red"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M9: Caution solar proton warning; Critical solar event started or suit dosimeter dose rate red.",
+      "action": {
+        "caution": "Task list shortened. Check the time to shelter.",
+        "critical": "End the EVA and return to shelter."
+      }
+    },
+    "eva_partner_voice_loss": {
+      "label": "No voice contact with partner",
+      "unit": "min",
+      "scope": "eva",
+      "caution": [
+        {
+          "op": ">",
+          "value": 2,
+          "label": "(proposal)"
+        }
+      ],
+      "critical": [
+        {
+          "type": "flag",
+          "flag": "partnerNoResponse",
+          "label": "partner does not answer two calls"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M9: Caution no voice with partner >2 min (proposal); Critical partner does not answer two calls.",
+      "action": {
+        "caution": "Get eye contact with your partner; use hand signals.",
+        "critical": "Go to your partner. Check their pressure, O₂ and heart rate."
+      }
+    },
+    "eva_habitat_link_loss": {
+      "label": "No habitat link",
+      "unit": "min",
+      "scope": "eva",
+      "caution": [
+        {
+          "op": ">",
+          "value": 10,
+          "label": "(proposal)"
+        }
+      ],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "EVA Panel v2, M9: Caution no habitat link >10 min (proposal).",
+      "action": {
+        "caution": "Stay close to your partner."
+      }
+    },
+    "radiation_measured": {
+      "label": "Radiation dose rate (measured)",
+      "unit": "µGy/h",
+      "scope": "info",
+      "caution": [],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Real data: NASA OSDR RadLab, ISS DOSTEL-1 absorbed dose rate, replayed. No limit is configured: the documents give radiation limits in mSv (dose equivalent), not in absorbed dose rate, and no conversion factor."
+    },
+    "lab_hemoglobin": {
+      "label": "Hemoglobin",
+      "unit": "g/dL",
+      "scope": "lab",
+      "caution": [
+        {
+          "op": "<",
+          "value": 13,
+          "sex": "male",
+          "label": "low (male 11–12.9)"
+        },
+        {
+          "op": "<",
+          "value": 12,
+          "sex": "female",
+          "label": "low (female 11–11.9)"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<",
+          "value": 11,
+          "label": "low"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "emergency": {
+        "op": "<=",
+        "value": 7,
+        "label": "very urgent"
+      },
+      "source": "Periodic Health Tasks Checklist, section 2 (blood and urine tests), 'Limit values' table: normal male >=13, female >=12 g/dL; yellow male 11–12.9, female 11–11.9; red <11; <=7 very urgent. Sources in the document: WHO 2024, UCSF."
+    },
+    "lab_sodium": {
+      "label": "Sodium",
+      "unit": "mmol/L",
+      "scope": "lab",
+      "caution": [
+        {
+          "op": "<",
+          "value": 135,
+          "label": "low"
+        },
+        {
+          "op": ">",
+          "value": 145,
+          "label": "high"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<",
+          "value": 120,
+          "label": "low"
+        },
+        {
+          "op": ">",
+          "value": 160,
+          "label": "high"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist, section 2 (blood and urine tests), 'Limit values' table: normal 135–145; yellow 120–134 or 146–160; red <120 or >160 mmol/L."
+    },
+    "lab_potassium": {
+      "label": "Potassium",
+      "unit": "mmol/L",
+      "scope": "lab",
+      "caution": [
+        {
+          "op": "<",
+          "value": 3.5,
+          "label": "low"
+        },
+        {
+          "op": ">",
+          "value": 5.2,
+          "label": "high"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<",
+          "value": 2.8,
+          "label": "low"
+        },
+        {
+          "op": ">",
+          "value": 6.2,
+          "label": "high"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist, section 2 (blood and urine tests), 'Limit values' table: normal 3.5–5.2; yellow 2.8–3.4 or 5.3–6.2; red <2.8 or >6.2 mmol/L."
+    },
+    "lab_ionized_calcium": {
+      "label": "Ionized calcium",
+      "unit": "mmol/L",
+      "scope": "lab",
+      "caution": [],
+      "critical": [
+        {
+          "op": "<",
+          "value": 0.8,
+          "label": "low"
+        },
+        {
+          "op": ">",
+          "value": 1.55,
+          "label": "high"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "openItems": [
+        "Yellow is 'outside the device normal range'; the device range is not given in the documents, so only the red limits are evaluated."
+      ],
+      "source": "Periodic Health Tasks Checklist, section 2 (blood and urine tests), 'Limit values' table: normal = the device's normal range; yellow outside it; red <0.80 or >1.55 mmol/L."
+    },
+    "lab_crp": {
+      "label": "CRP (inflammation)",
+      "unit": "mg/L",
+      "scope": "lab",
+      "caution": [
+        {
+          "op": ">=",
+          "value": 5,
+          "label": "raised (5–10: repeat in 1 week)"
+        }
+      ],
+      "critical": [
+        {
+          "op": ">",
+          "value": 100,
+          "label": "high"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist, section 2 (blood and urine tests), 'Limit values' table: normal <5 mg/L; yellow 10–100 (5–10: repeat after 1 week); red >100 mg/L."
+    },
+    "lab_urine_sg": {
+      "label": "Urine specific gravity",
+      "unit": "",
+      "scope": "lab",
+      "caution": [
+        {
+          "op": ">",
+          "value": 1.03,
+          "label": "concentrated"
+        },
+        {
+          "op": "<",
+          "value": 1.005,
+          "label": "dilute (yellow only if it continues)"
+        }
+      ],
+      "critical": [
+        {
+          "op": ">",
+          "value": 1.035,
+          "label": "very concentrated"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "openItems": [
+        "'Below 1.005 and continuing' needs a rule for 'continuing'; a single low reading is shown as yellow."
+      ],
+      "source": "Periodic Health Tasks Checklist, section 2 (blood and urine tests), 'Limit values' table: normal 1.005–1.030; yellow >1.030, or <1.005 and continuing; red >1.035. Measured weekly, first morning urine."
+    },
+    "lab_hematocrit": {
+      "label": "Hematocrit",
+      "unit": "%",
+      "scope": "lab",
+      "caution": [
+        {
+          "op": "<",
+          "value": 39,
+          "sex": "male",
+          "label": "low (male 33–38.9)"
+        },
+        {
+          "op": ">",
+          "value": 52,
+          "sex": "male",
+          "label": "high, possible dehydration"
+        },
+        {
+          "op": "<",
+          "value": 36,
+          "sex": "female",
+          "label": "low (female 33–35.9)"
+        },
+        {
+          "op": ">",
+          "value": 48,
+          "sex": "female",
+          "label": "high, possible dehydration"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<",
+          "value": 33,
+          "label": "low"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "emergency": {
+        "op": "<=",
+        "value": 21,
+        "label": "very urgent"
+      },
+      "source": "Periodic Health Tasks Checklist, section 2 (blood and urine tests), 'Limit values' table: normal male 39–52 %, female 36–48 %; yellow male 33–38.9, female 33–35.9, or above 52 / 48 (proposal); red <33 %; <=21 % very urgent."
+    },
+    "lab_glucose": {
+      "label": "Glucose (fasting)",
+      "unit": "mg/dL",
+      "scope": "lab",
+      "caution": [
+        {
+          "op": "<",
+          "value": 70,
+          "label": "low"
+        },
+        {
+          "op": ">",
+          "value": 105,
+          "label": "high"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<",
+          "value": 55,
+          "label": "low"
+        },
+        {
+          "op": ">",
+          "value": 400,
+          "label": "high"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist, section 2 (blood and urine tests), 'Limit values' table: normal 70–105; yellow 56–69 or 106–400 (proposal); red <55 or >400 mg/dL."
+    },
+    "lab_bun": {
+      "label": "Urea nitrogen (BUN)",
+      "unit": "mg/dL",
+      "scope": "lab",
+      "caution": [
+        {
+          "op": ">",
+          "value": 20,
+          "label": "high"
+        }
+      ],
+      "critical": [
+        {
+          "op": ">",
+          "value": 65,
+          "label": "high"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist, section 2 (blood and urine tests), 'Limit values' table: normal 7–20; yellow 21–65 (proposal); red >65 mg/dL."
+    },
+    "lab_creatinine": {
+      "label": "Creatinine",
+      "unit": "mg/dL",
+      "scope": "lab",
+      "caution": [
+        {
+          "op": ">",
+          "value": 1.2,
+          "label": "high"
+        }
+      ],
+      "critical": [
+        {
+          "op": ">",
+          "value": 5,
+          "label": "high"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "openItems": [
+        "The +30 % from personal baseline rule needs a preflight baseline; not evaluated yet."
+      ],
+      "source": "Periodic Health Tasks Checklist, section 2 (blood and urine tests), 'Limit values' table (continued): normal 0.6–1.2; yellow 1.3–5.0 or a rise of more than 30 % from the person's own baseline (proposal); red >5.0 mg/dL."
+    },
+    "lab_chloride": {
+      "label": "Chloride",
+      "unit": "mmol/L",
+      "scope": "lab",
+      "caution": [
+        {
+          "op": "<",
+          "value": 98,
+          "label": "low"
+        },
+        {
+          "op": ">",
+          "value": 107,
+          "label": "high"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<",
+          "value": 80,
+          "label": "low"
+        },
+        {
+          "op": ">",
+          "value": 120,
+          "label": "high"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist, section 2 (blood and urine tests), 'Limit values' table (continued): normal 98–107; yellow 80–97 or 108–120 (proposal); red <80 or >120 mmol/L."
+    },
+    "lab_total_co2": {
+      "label": "Total CO₂ (bicarbonate)",
+      "unit": "mmol/L",
+      "scope": "lab",
+      "caution": [
+        {
+          "op": "<",
+          "value": 23,
+          "label": "low"
+        },
+        {
+          "op": ">",
+          "value": 29,
+          "label": "high"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<",
+          "value": 10,
+          "label": "low"
+        },
+        {
+          "op": ">",
+          "value": 40,
+          "label": "high"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist, section 2 (blood and urine tests), 'Limit values' table (continued): normal 23–29; yellow 10–22 or 30–40 (proposal); red <10 or >40 mmol/L."
+    },
+    "sleep_hours": {
+      "label": "Sleep",
+      "unit": "h",
+      "scope": "periodic",
+      "caution": [
+        {
+          "op": "<",
+          "value": 6,
+          "window": {
+            "kind": "mean",
+            "minutes": 10080
+          },
+          "label": "7-day average below 6 h (proposal)"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<",
+          "value": 5,
+          "window": {
+            "kind": "sustained",
+            "minutes": 4320
+          },
+          "label": "3 nights in a row below 5 h (proposal)"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist (15 Nov 2026), section 11: normal 7-day average 6 h or more; yellow below 6 h; red 3 nights in a row below 5 h or below 5 h the night before a critical task (proposals; the critical-task part is the readiness red gate)."
+    },
+    "cognition_z": {
+      "label": "Cognitive test",
+      "unit": "z",
+      "scope": "info",
+      "caution": [],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Chart Blueprint, Mission readiness panel: cognitive test z-score against the person's own baseline, every 2–3 weeks."
+    },
+    "reaction_ms": {
+      "label": "Reaction time",
+      "unit": "ms",
+      "scope": "info",
+      "caution": [],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist (15 Nov 2026), section 3: short sleep, stress and cabin CO₂ slow reaction time; yellow = clearly slower than the person's own normal in 2 tests in a row. The numeric size of 'clearly' is set by the flight surgeon (open item), so no colour limit here. Test: median of 5 visual reactions on this panel.",
+      "openItems": [
+        "How much slower than the own normal counts as 'clearly' (flight surgeon)"
+      ]
+    },
+    "rad_daily_dose": {
+      "label": "Daily effective dose (estimate)",
+      "unit": "mSv",
+      "scope": "info",
+      "caution": [],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Astronaut Radiation Monitoring: effects, measurement, sensors, data sources, dose calculation and limits (14 Nov 2026): E_day ≈ Σ t_k·Ḣ_k + E_EVA (time-weighted area monitor dose rate, EVA counted apart). Limits are applied as ratios by core/radiation.ts."
+    },
+    "rad_eva_dose": {
+      "label": "EVA extra dose, skin and eye (estimate)",
+      "unit": "mSv",
+      "scope": "info",
+      "caution": [],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Astronaut Radiation Monitoring: effects, measurement, sensors, data sources, dose calculation and limits (14 Nov 2026): E_day ≈ Σ t_k·Ḣ_k + E_EVA (time-weighted area monitor dose rate, EVA counted apart). Limits are applied as ratios by core/radiation.ts."
+    },
+    "eye_vision_lines": {
+      "label": "Vision test, lines lost",
+      "unit": "lines",
+      "scope": "periodic",
+      "caution": [
+        {
+          "op": ">=",
+          "value": 1,
+          "label": "1 line lost (proposal)"
+        }
+      ],
+      "critical": [
+        {
+          "op": ">=",
+          "value": 2,
+          "label": "2 or more lines lost (proposal)"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist (15 Nov 2026), section 1: 1 line lost yellow, 2 or more lines or sudden loss red (proposals). Monthly computer vision test."
+    },
+    "eye_iop": {
+      "label": "Intraocular pressure",
+      "unit": "mmHg",
+      "scope": "periodic",
+      "caution": [
+        {
+          "op": ">",
+          "value": 21,
+          "label": "raised (22–30)"
+        }
+      ],
+      "critical": [
+        {
+          "op": ">",
+          "value": 30,
+          "label": "high (proposal)"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist (15 Nov 2026), section 1: normal 10–21, yellow 22–30 (above 21 on at least 2 readings), red above 30 (proposal), above 40 fast vision loss. Measured only on complaint.",
+      "emergency": {
+        "op": ">",
+        "value": 40,
+        "label": "risk of fast vision loss"
+      }
+    },
+    "nutrition_kcal_pct": {
+      "label": "Energy intake, % of plan",
+      "unit": "%",
+      "scope": "periodic",
+      "caution": [
+        {
+          "op": "<",
+          "value": 80,
+          "window": {
+            "kind": "sustained",
+            "minutes": 4320
+          },
+          "label": "3 days in a row below 80 % (proposal)"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<",
+          "value": 70,
+          "window": {
+            "kind": "sustained",
+            "minutes": 10080
+          },
+          "label": "7 days in a row below 70 % (proposal)"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist (15 Nov 2026), section 4: normal 90 % of plan or more; yellow 3 days in a row below 80 %; red 7 days in a row below 70 % or no eating (proposals)."
+    },
+    "water_l": {
+      "label": "Water intake",
+      "unit": "L/day",
+      "scope": "periodic",
+      "caution": [
+        {
+          "op": "<",
+          "value": 2.5,
+          "window": {
+            "kind": "sustained",
+            "minutes": 2880
+          },
+          "label": "2 days in a row below 2.5 L (proposal)"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<",
+          "value": 1.5,
+          "label": "below 1.5 L (proposal)"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist (15 Nov 2026), section 4: normal 2.5 L/day or more; yellow 2 days in a row below 2.5 L; red below 1.5 L or no urine for 12 h (proposals)."
+    },
+    "sleep_med_nights": {
+      "label": "Sleep medication",
+      "unit": "nights/week",
+      "scope": "periodic",
+      "caution": [
+        {
+          "op": ">=",
+          "value": 3,
+          "label": "3 or more nights a week (proposal)"
+        }
+      ],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist (15 Nov 2026), section 5: yellow sleep medication 3 or more nights a week (proposal). Red items (allergic reaction, wrong dose) are events, not numbers."
+    },
+    "ecg_max_pause": {
+      "label": "ECG longest pause",
+      "unit": "s",
+      "scope": "periodic",
+      "caution": [
+        {
+          "op": ">=",
+          "value": 2,
+          "label": "2–3 s pause without symptoms (proposal)"
+        }
+      ],
+      "critical": [
+        {
+          "op": ">",
+          "value": 3,
+          "label": "pause longer than 3 s"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist (15 Nov 2026), section 7: pause 2–3 s without symptoms yellow (proposal); longer than 3 s red (Holter syncope criteria)."
+    },
+    "body_mass_loss": {
+      "label": "Body mass loss vs preflight",
+      "unit": "%",
+      "scope": "periodic",
+      "caution": [
+        {
+          "op": ">=",
+          "value": 5,
+          "label": "5 % or more (proposal)"
+        }
+      ],
+      "critical": [
+        {
+          "op": ">=",
+          "value": 10,
+          "label": "10 % or more"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist (15 Nov 2026), section 8: below 5 % normal (3–4 % expected in the first 30 days); yellow 5 % or more (proposal); red 10 % or more."
+    },
+    "fitness_pct": {
+      "label": "Aerobic fitness vs preflight",
+      "unit": "%",
+      "scope": "periodic",
+      "caution": [
+        {
+          "op": "<",
+          "value": 85,
+          "label": "below 85 % (proposal)"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<",
+          "value": 80,
+          "label": "below 80 %"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist (15 Nov 2026), section 9: normal 85 % of preflight or more; yellow below 85 % (proposal); red below 80 %."
+    },
+    "fitness_vo2peak": {
+      "label": "VO2peak",
+      "unit": "mL/kg/min",
+      "scope": "periodic",
+      "caution": [],
+      "critical": [
+        {
+          "op": "<",
+          "value": 32.9,
+          "label": "below 32.9 before an EVA"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist (15 Nov 2026), section 9: red below 32.9 mL/kg/min before a spacewalk (source in the checklist)."
+    },
+    "strength_pct": {
+      "label": "Muscle strength vs baseline",
+      "unit": "%",
+      "scope": "periodic",
+      "caution": [
+        {
+          "op": "<",
+          "value": 90,
+          "label": "below 90 % (proposal)"
+        }
+      ],
+      "critical": [
+        {
+          "op": "<",
+          "value": 80,
+          "label": "below 80 %"
+        }
+      ],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Periodic Health Tasks Checklist (15 Nov 2026), section 10: normal 90 % of baseline or more; yellow below 90 % (proposal); red below 80 %. ARED strength test."
+    },
+    "bone_urine_ca": {
+      "label": "24-h urine calcium",
+      "unit": "mg/day",
+      "scope": "info",
+      "caution": [],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Bone Loss document (14 Nov 2026): 24-h urine calcium against the personal preflight baseline; levels from R_Ca in core/musculo.ts."
+    },
+    "bone_ntx": {
+      "label": "Urine NTX",
+      "unit": "nmol BCE/mmol Cr",
+      "scope": "info",
+      "caution": [],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Bone Loss document: urine N-telopeptide (resorption), personal baseline; plateau about +113 % (meta-analysis PMC7200725)."
+    },
+    "bone_bsap": {
+      "label": "BSAP (formation)",
+      "unit": "U/L",
+      "scope": "info",
+      "caution": [],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Bone Loss document: bone-specific alkaline phosphatase; unchanged for 30 days, then about +7 % a month (PMC7200725)."
+    },
+    "muscle_leg_press": {
+      "label": "Leg press strength",
+      "unit": "N",
+      "scope": "info",
+      "caution": [],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Exercise Program document (15 Nov 2026): loss % = (1 − P/P0) × 100 against preflight P0."
+    },
+    "muscle_knee_torque": {
+      "label": "Knee extension peak torque",
+      "unit": "Nm",
+      "scope": "info",
+      "caution": [],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Exercise Program document: isokinetic knee extension, e.g. 191 → 188 Nm Sprint, 208 → 195 Nm standard (English et al. 2020)."
+    },
+    "ared_volume": {
+      "label": "ARED volume load",
+      "unit": "kg",
+      "scope": "info",
+      "caution": [],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "Exercise Program document: volume load = sets × reps × load, recorded by ARED."
+    },
+    "goes_proton_flux": {
+      "label": "Solar protons ≥10 MeV (GOES)",
+      "unit": "pfu",
+      "scope": "info",
+      "caution": [],
+      "critical": [],
+      "cautionConfirm": "direct",
+      "criticalConfirm": false,
+      "source": "NOAA SWPC GOES integral protons (real, replayed). NOAA S-scale S1 10, S2 100, S3 1000, S4 10 000, S5 100 000 pfu; environment indicator, not astronaut dose (radiation document). S2 or above is a Warning in the radiation ledger."
+    }
+  },
+  "eva": {
+    "_about": "EVA calculation constants from EVA Panel v2 (eva_config.yaml section). Values marked proposal there need flight-surgeon approval.",
+    "reserveMin": 30,
+    "returnMetFloorBtuh": 2374,
+    "returnMetFactor": 1.35,
+    "o2LitrePerMinPerBtuh": 0.00086,
+    "leak": {
+      "excessPct": 20,
+      "windowMin": 10
+    },
+    "heatReferenceMin": 10,
+    "orthostatic": {
+      "gateBtuh": 700,
+      "g": {
+        "mars": 3.721,
+        "moon": 1.62
+      }
+    },
+    "mismatch": {
+      "hrAbove": 140,
+      "metabolicBelow": 1000
+    },
+    "pico2ExpectedCurve": [
+      [
+        0,
+        4.75
+      ],
+      [
+        1000,
+        8.09
+      ],
+      [
+        2000,
+        11.39
+      ],
+      [
+        3000,
+        14.36
+      ]
+    ],
+    "alertPriority": [
+      "eva_suit_pressure",
+      "eva_pico2",
+      "eva_o2",
+      "eva_partner_voice_loss",
+      "eva_return_by",
+      "eva_margin",
+      "eva_suit_time_with_return",
+      "eva_radiation",
+      "eva_core_temp",
+      "eva_core_rise",
+      "eva_skin_rise",
+      "eva_ori",
+      "eva_orthostatic_hr_rise",
+      "eva_heart_rate",
+      "eva_metabolic_rate",
+      "eva_suit_time",
+      "eva_drink_rate",
+      "eva_drink_bag",
+      "eva_habitat_link_loss",
+      "eva_pico2_excess"
+    ]
+  },
+  "symptomDiary": {
+    "source": "Periodic Health Tasks Checklist, section 6 (symptom diary), all values marked as proposal: yellow = same complaint 3 days in a row or severity 4–6 of 10; red = severity 7 or more, or a red-flag complaint (list in checkin.json)",
+    "yellowSeverityMin": 4,
+    "redSeverityMin": 7,
+    "repeatDays": 3
+  },
+  "readiness": {
+    "source": "Chart Blueprint (Crew Oxygen Chart and Mission Readiness Panel), section 5. All weights, windows and score bands are marked as proposals, to be approved by the flight surgeon.",
+    "defaultSleepNeedH": 8,
+    "sleep": {
+      "lastNightFactor": 10,
+      "weekFactor": 3,
+      "days": 7
+    },
+    "zMap": {
+      "freeAbove": -0.5,
+      "slope": 40
+    },
+    "co2": {
+      "freeBelow": 2.5,
+      "zeroAt": 5.3,
+      "hours": 24
+    },
+    "weights": {
+      "sleep": 0.4,
+      "hrv": 0.25,
+      "cognition": 0.25,
+      "co2": 0.1
+    },
+    "bands": {
+      "ready": 70,
+      "caution": 50
+    },
+    "redGate": {
+      "sleepBelowH": 5,
+      "nightsInRow": 3
+    },
+    "freshness": {
+      "hrvHours": 36,
+      "cognitionDays": 21,
+      "co2Hours": 1
+    }
+  },
+  "crewOxygen": {
+    "source": "Chart Blueprint, section 3 'Environment or person: decision rule' (10 min window, 3-point drop, 24 h median are proposals) and Main Panel Alarm Checklist (SpO₂ <=94 %).",
+    "windowMin": 10,
+    "dropPoints": 3,
+    "medianHours": 24,
+    "lowValue": 94,
+    "co2MeanMin": 60
+  },
+  "hexagon": {
+    "source": "Health Hexagon: data sources, download instructions and references (14 Nov 2026), 'Thresholds and normalisation' table; axis list from the team hexagon table. Axes 0 = no load, 1 = full load; ring at 0.6 = ORI 60. The polygon raises no alarm. No number here means 'hexagon validated'.",
+    "hrDeviationFullBpm": 30,
+    "cautionRing": 0.6,
+    "axes": [
+      {
+        "label": "Autonomic reserve",
+        "zero": "RMSSD ≥ own RMSSD₀",
+        "full": "RMSSD → 0 (1 − RMSSD/RMSSD₀, as G-TRANSIT C)",
+        "basis": "Personal baseline, no population norm (Nunan et al. 2010); baseline from ≥5 min rest (Task Force 1996). Needs effort correction (Lewis et al. 2007).",
+        "status": "sourced principle; limit to be set from data"
+      },
+      {
+        "label": "Heart-rate deviation",
+        "zero": "HR ≤ expected HR for effort",
+        "full": "HR − expected = +30 bpm (proposal)",
+        "basis": "Postural tachycardia ≥30 bpm (Freeman 2011, same as M8). β₁ must be personal: NASA EVA HR–MR model R² 0.402 pooled, >0.82 per person (NTRS 20210024317).",
+        "status": "sourced limit; β₁ from data"
+      },
+      {
+        "label": "Vasodilation",
+        "zero": "core − skin ≥ 4 °C",
+        "full": "core − skin ≤ 1 °C",
+        "basis": "G-TRANSIT V grad_hi / grad_lo (heuristic in the Blueprint); ΔTre−Tsk with HR reaches AUC 0.88 (CDC Stacks 210476).",
+        "status": "heuristic; to calibrate with Mendeley sets"
+      },
+      {
+        "label": "Heat storage",
+        "zero": "ΔTcore = 0 (EVA-start 10-min mean)",
+        "full": "Tcore = 39.5 °C (PSI limit)",
+        "basis": "Temperature term of the PSI, Moran et al. 1998; risk PSI 7.5 (Buller 2008); ACGIH core limit 38.5 °C. No validated limit for the time integral, so the PSI term is drawn.",
+        "status": "PSI term sourced; integral from data"
+      },
+      {
+        "label": "Volume deficit",
+        "zero": "no deficit",
+        "full": "plasma deficit 20 % (as G-TRANSIT H)",
+        "basis": "In-flight plasma loss 10–15 % (Fortney et al. 2001); 20 % in presyncopal landing crew vs 7 % (Waters et al. 2002); Montain & Coyle 1992.",
+        "status": "sourced"
+      },
+      {
+        "label": "Cumulative effort",
+        "zero": "0 BTU",
+        "full": "planned total EVA energy (mission timeline)",
+        "basis": "No physiological limit. NASA metabolic classes low ≤700, moderate 700–1000, high ≥1000 BTU/h; highest measured 1747 BTU/h (NTRS 20220009964). Apollo EVA means 780–1200 BTU/h (NASA TN D-7883).",
+        "status": "classes sourced; scale is a design decision"
+      }
+    ]
+  },
+  "radiation": {
+    "source": "Astronaut Radiation Monitoring: effects, measurement, sensors, data sources, dose calculation and limits (14 Nov 2026). Limits: career 600 mSv effective (NASA-STD-3001 Vol 1 [V1 4030]); SPE 250 mSv per event [V1 4031]; 30-day organ limits blood-forming organs 250, lens 1000, skin 1500 mGy-Eq and yearly 500 / 2000 / 3000 (NCRP 132, NASA 30-day PEL). Free-space GCR about 0.5 mSv/day. Operational steps 0.5 / 0.8 / 1.0 of a limit and 3x the normal dose rate are the document's design choice (ALARA), not NASA's.",
+    "careerLimitMSv": 600,
+    "speLimitMSv": 250,
+    "organ30d": {
+      "bfo": 250,
+      "eye": 1000,
+      "skin": 1500
+    },
+    "organYear": {
+      "bfo": 500,
+      "eye": 2000,
+      "skin": 3000
+    },
+    "normalRateMSvDay": 0.5,
+    "levels": {
+      "caution": 0.5,
+      "warning": 0.8,
+      "critical": 1.0
+    },
+    "rateAlarmFactor": 3,
+    "warningSScale": 2
+  },
+  "bone": {
+    "source": "Bone Loss document, 14 Nov 2026. Method 2: R_Ca = (U − U0)/U0; ΔCa ≈ −250 mg/day × min(R_Ca, 1); monthly loss % ≈ 30·|ΔCa| / skeletal Ca × 100. Skeletal calcium 1100 g is from memory in the document (not verified). Steps 0.5 / 1 / 1.5 are the document's design choice.",
+    "netLossMgDayAtR1": 250,
+    "skeletalCaMg": 1100000,
+    "ntxPlateauRise": 1.13,
+    "levels": {
+      "caution": 0.5,
+      "warning": 1.0
+    },
+    "lossPctMonth": {
+      "caution": 0.5,
+      "warning": 1.0,
+      "critical": 1.5
+    }
+  },
+  "muscle": {
+    "source": "Astronaut Exercise Program document, 15 Nov 2026: R_kas = min(loss % / 20, 1) (20 % = NASA muscle concern level, English et al. 2020); compliance U = completed / planned volume load over 7 days. Bands 0.25 / 0.5 and U 0.6 / 0.85 are the team's proposal.",
+    "lossFullPct": 20,
+    "risk": {
+      "caution": 0.25,
+      "critical": 0.5
+    },
+    "compliance": {
+      "caution": 0.85,
+      "critical": 0.6
+    },
+    "days": 7
+  },
+  "baseline": {
+    "_about": "Personal Baseline and Sex Differences (team document, 15 Nov 2026). Robust z = (x − baseline median) / max(1.4826 · MAD, σ_floor). The baseline only adds an early warning (yellow, or 'orange' = yellow that asks the person to confirm); it never turns a red into yellow and never makes red. Final colour = the worse of the baseline colour and the absolute-limit colour. All numbers are the team's proposals, not NASA standards, not validated on astronaut data. Verified 15 Nov 2026 (team source-verification notes): Norsk 2015 (PMC4324706, ISS 85–192 days, 8 men) found 24 h systolic / diastolic / mean pressure 8 / 9 / 10 mmHg lower than preflight ambulatory values, nightly dip 8 ± 3 mmHg kept, heart rate unchanged — an Earth seated reference would flag everyone, hence supine and the flight baseline.",
+    "metrics": [
+      "bp_systolic",
+      "bp_diastolic",
+      "spo2",
+      "body_temp"
+    ],
+    "madScale": 1.4826,
+    "sigmaFloor": {
+      "bp_systolic": null,
+      "bp_diastolic": null,
+      "spo2": null,
+      "body_temp": null
+    },
+    "zCaution": 2,
+    "zOrange": 3,
+    "sustainedHours": 6,
+    "xWindowMin": 60,
+    "minSessions": 5,
+    "flightWindowDays": 14,
+    "earlyFlightDays": 14,
+    "reference": {
+      "microgravity": "supine",
+      "landing": "standing",
+      "surface": "standing"
+    },
+    "landingHours": 72,
+    "openItems": [
+      "σ_floor per parameter (document: set by the team; not given) – until then σ_floor = 0",
+      "Width of the temporary wide band in the first 2 weeks of flight (document gives none; its basis is Fritsch-Yelle 1996, Shuttle, 12 astronauts: diastolic −5 mmHg, as reported in Norsk 2015) – until then the baseline colour is not used in the first 14 flight days",
+      "x = median of the last 60 min of readings (implementation choice, same idea as 'one reading is not an alarm')"
+    ],
+    "source": "Personal Baseline and Sex Differences: design, data and references for the astronaut health monitor (Spark team, 15 Nov 2026), sections 'Colour code against the personal baseline' and 'Sex-specific rules on the panel'."
+  },
+  "sexRules": {
+    "_about": "Sex is a risk modifier, not a correction (NTRS 20040088708: within-sex differences are as large as between-sex). Used only in the documented rules; never to change a normal range. Verified against PMC4236030 and the NTRS 20040088708 abstract (15 Nov 2026).",
+    "landingOrthostatic": {
+      "sex": "female",
+      "rule": "Landing and first 72 h: a standing-baseline deviation is shown as a visible caution with 'Sit down first' (others: logged quietly). Same threshold, more frequent warning.",
+      "source": "NTRS 20040088708 (abstract) and PMC4236030: presyncope after landing more frequent in women; the only sex difference with enough data"
+    },
+    "urinaryFirst": {
+      "sex": "female",
+      "topics": [
+        "Urine"
+      ],
+      "rule": "Urinary symptoms (burning or frequent urination) are asked first in the symptom diary.",
+      "source": "PMC4236030 (NASA/NSBRI 2014): urinary tract infections in space more common in women, treated with antibiotics; only women needed catheterisation"
+    },
+    "radiation": {
+      "rule": "Radiation limits come from the radiation document; this document does not redefine them (that document has no sex-specific value: 600 mSv career for everyone, NASA-STD-3001 2022)."
+    },
+    "coldStart": {
+      "rule": "No personal baseline (fewer than minSessions): absolute limits only, shown on screen; no sex-based relative reference."
+    }
+  }
+}

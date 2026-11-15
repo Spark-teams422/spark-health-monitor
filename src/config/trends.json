@@ -1,0 +1,77 @@
+{
+  "_about": "Early warning by trend projection (team decision, 15 Nov 2026), instead of the ML 'time-to-event' models of the uploaded AI blueprint (their risk formulas and crisis thresholds have no source and no real astronaut outcome data exists to train on). Method: daily means of the last windowDays, Theil–Sen slope (median of all pairwise slopes; its 25th–75th percentile gives the range), projected to the limits already in thresholds.json. It says when a value would cross a documented limit if the trend goes on; it never raises an alarm and never names a disease or a probability. Numbers here are display settings (proposal), not medical limits.",
+  "windowDays": 14,
+  "recentDays": 3,
+  "minDays": 4,
+  "horizonDays": 21,
+  "metrics": [
+    {
+      "id": "water_l",
+      "windowDays": 14,
+      "name": "Water",
+      "unit": "L/day"
+    },
+    {
+      "id": "nutrition_kcal_pct",
+      "windowDays": 14,
+      "name": "Food",
+      "unit": "% of need"
+    },
+    {
+      "id": "sleep_hours",
+      "windowDays": 14,
+      "name": "Sleep",
+      "unit": "h/night"
+    },
+    {
+      "id": "hrv",
+      "windowDays": 14,
+      "name": "Heart-rate variability",
+      "unit": "ms"
+    },
+    {
+      "id": "body_mass_loss",
+      "windowDays": 56,
+      "name": "Weight loss",
+      "unit": "%"
+    },
+    {
+      "id": "lab_urine_sg",
+      "windowDays": 56,
+      "name": "Urine concentration",
+      "unit": ""
+    },
+    {
+      "id": "cabin_co2",
+      "windowDays": 14,
+      "name": "Cabin CO₂",
+      "unit": "mmHg"
+    }
+  ],
+  "cards": {
+    "kidney": {
+      "title": "Kidney stone risk rising",
+      "advice": "Drink up to your daily water target. Pain in your side or blood in urine: press Emergency.",
+      "source": "Periodic Health Tasks Checklist (water < 2.5 L/day raises kidney stone risk; urine specific gravity); bone loss document (urinary calcium R_Ca)",
+      "card": "C-KIDNEY-STONE"
+    },
+    "fatigue": {
+      "title": "Tiredness risk rising",
+      "advice": "Sleep longer and take a short nap. Ask the commander to move hard tasks. Do the reaction test.",
+      "source": "Periodic Health Tasks Checklist sections 3, 5 and 11; Mission readiness panel (Chart Blueprint)",
+      "card": "C-SLEEP"
+    },
+    "energy": {
+      "title": "Eating too little",
+      "advice": "Eat your full meals and add a snack. Weigh yourself twice a week.",
+      "source": "Periodic Health Tasks Checklist section 4 and 8; nutrition document (NASA JSC 67378)"
+    },
+    "co2": {
+      "title": "Cabin CO₂ rising",
+      "advice": "Check the CO₂ scrubber and fans. Several people with headache: press Emergency, choose Cabin.",
+      "source": "Main Panel Alarm Checklist (cabin CO₂); NASA OCHMO TB-004",
+      "card": "C-ENVIRONMENT-CO2"
+    }
+  },
+  "_aboutMetrics": "Daily or weekly values only: weekly ones (body mass, urine) use 8 weeks. Continuous vitals (blood pressure, temperature) keep 24 h of data in this demo and are watched by the limits and the personal baseline instead."
+}

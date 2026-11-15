@@ -1,0 +1,65 @@
+# Builds the desktop app (desktop/) on GitHub's runners and attaches the installers to a GitHub Release.
+# Run it from the Actions tab (Run workflow) or by pushing a tag such as desktop-v1.0.0.
+name: Desktop app
+on:
+  workflow_dispatch:
+  push:
+    tags: ['desktop-v*']
+permissions:
+  contents: write
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: macos-latest
+            target: dist:mac
+          - os: windows-latest
+            target: dist:win
+          - os: ubuntu-latest
+            target: dist:linux
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci && npm test && npm run build
+      - run: npm ci && npm run ${{ matrix.target }} -- --publish never
+        working-directory: desktop
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+      - name: Check the macOS signature (an unsigned or broken bundle opens as "damaged")
+        if: runner.os == 'macOS'
+        run: |
+          for d in desktop/release/*.dmg; do
+            m=$(hdiutil attach -nobrowse -readonly "$d" | tail -1 | cut -f3-)
+            codesign --verify --deep --strict --verbose=2 "$m"/*.app
+            hdiutil detach "$m"
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: desktop-${{ matrix.os }}
+          path: |
+            desktop/release/*.dmg
+            desktop/release/*.exe
+            desktop/release/*.AppImage
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: out
+          merge-multiple: true
+      - name: Create or update the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_type == 'tag' && github.ref_name || '' }}
+        run: |
+          TAG=${TAG:-desktop-v$(node -p "require('./desktop/package.json').version")}
+          gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1 || \
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --title "Astronaut Health Monitor desktop app" \
+              --notes "Desktop app (Electron) of the same web app. macOS: .dmg (Apple silicon arm64, Intel x64). Windows: .exe installer (x64). Linux: .AppImage (x64). Not notarized by Apple and not code-signed for Windows: see the install steps on the app branch."
+          gh release upload "$TAG" out/* -R "$GITHUB_REPOSITORY" --clobber

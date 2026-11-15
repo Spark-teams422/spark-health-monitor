@@ -1,0 +1,206 @@
+{
+ "source": "MMASH: Multilevel Monitoring of Activity and Sleep in Healthy people (PhysioNet 1.0.0)",
+ "license": "Open Data Commons Open Database License v1.0",
+ "retrieved": "2026-11-14",
+ "processing": "sleepH = total sleep time of the recorded night. nightRmssdMs = median rMSSD of 5-min windows 00:00\u201306:00 (artefacts dropped).",
+ "users": [
+  {
+   "user": "user_1",
+   "sex": "male",
+   "age": 29,
+   "sleepH": 5.67,
+   "nightRmssdMs": 71.2,
+   "nightRmssdSdMs": 18.8,
+   "windows": 72
+  },
+  {
+   "user": "user_2",
+   "sex": "male",
+   "age": 27,
+   "sleepH": 4.07,
+   "nightRmssdMs": 41.0,
+   "nightRmssdSdMs": 7.5,
+   "windows": 49
+  },
+  {
+   "user": "user_3",
+   "sex": "male",
+   "age": 34,
+   "sleepH": 5.85,
+   "nightRmssdMs": 50.8,
+   "nightRmssdSdMs": 9.0,
+   "windows": 67
+  },
+  {
+   "user": "user_4",
+   "sex": "male",
+   "age": 27,
+   "sleepH": 5.32,
+   "nightRmssdMs": 44.5,
+   "nightRmssdSdMs": 13.6,
+   "windows": 35
+  },
+  {
+   "user": "user_5",
+   "sex": "male",
+   "age": 25,
+   "sleepH": 5.8,
+   "nightRmssdMs": 37.7,
+   "nightRmssdSdMs": 14.8,
+   "windows": 72
+  },
+  {
+   "user": "user_6",
+   "sex": "male",
+   "age": 27,
+   "sleepH": 5.55,
+   "nightRmssdMs": 49.5,
+   "nightRmssdSdMs": 13.1,
+   "windows": 71
+  },
+  {
+   "user": "user_7",
+   "sex": "male",
+   "age": 25,
+   "sleepH": 5.7,
+   "nightRmssdMs": 24.1,
+   "nightRmssdSdMs": 12.2,
+   "windows": 69
+  },
+  {
+   "user": "user_8",
+   "sex": "male",
+   "age": 40,
+   "sleepH": 5.6,
+   "nightRmssdMs": 41.2,
+   "nightRmssdSdMs": 9.4,
+   "windows": 59
+  },
+  {
+   "user": "user_9",
+   "sex": "male",
+   "age": 20,
+   "sleepH": 9.63,
+   "nightRmssdMs": 35.7,
+   "nightRmssdSdMs": 7.9,
+   "windows": 70
+  },
+  {
+   "user": "user_10",
+   "sex": "male",
+   "age": 27,
+   "sleepH": 4.12,
+   "nightRmssdMs": 53.1,
+   "nightRmssdSdMs": 10.8,
+   "windows": 56
+  },
+  {
+   "user": "user_11",
+   "sex": "male",
+   "age": 27,
+   "sleepH": 0.0,
+   "nightRmssdMs": 44.4,
+   "nightRmssdSdMs": 12.1,
+   "windows": 72
+  },
+  {
+   "user": "user_12",
+   "sex": "male",
+   "age": 27,
+   "sleepH": 5.72,
+   "nightRmssdMs": 40.0,
+   "nightRmssdSdMs": 10.6,
+   "windows": 72
+  },
+  {
+   "user": "user_13",
+   "sex": "male",
+   "age": 25,
+   "sleepH": 4.12,
+   "nightRmssdMs": 41.4,
+   "nightRmssdSdMs": 8.3,
+   "windows": 72
+  },
+  {
+   "user": "user_14",
+   "sex": "male",
+   "age": 27,
+   "sleepH": 6.23,
+   "nightRmssdMs": 28.7,
+   "nightRmssdSdMs": 7.9,
+   "windows": 67
+  },
+  {
+   "user": "user_15",
+   "sex": "male",
+   "age": 24,
+   "sleepH": 3.93,
+   "nightRmssdMs": 70.2,
+   "nightRmssdSdMs": 16.4,
+   "windows": 71
+  },
+  {
+   "user": "user_16",
+   "sex": "male",
+   "age": 27,
+   "sleepH": 5.65,
+   "nightRmssdMs": 59.8,
+   "nightRmssdSdMs": 16.1,
+   "windows": 69
+  },
+  {
+   "user": "user_17",
+   "sex": "male",
+   "age": 24,
+   "sleepH": 5.1,
+   "nightRmssdMs": 70.2,
+   "nightRmssdSdMs": 10.4,
+   "windows": 72
+  },
+  {
+   "user": "user_18",
+   "sex": "male",
+   "age": 0,
+   "sleepH": 5.03,
+   "nightRmssdMs": 50.2,
+   "nightRmssdSdMs": 19.5,
+   "windows": 63
+  },
+  {
+   "user": "user_19",
+   "sex": "male",
+   "age": 22,
+   "sleepH": 5.67,
+   "nightRmssdMs": 60.3,
+   "nightRmssdSdMs": 11.9,
+   "windows": 72
+  },
+  {
+   "user": "user_20",
+   "sex": "male",
+   "age": 29,
+   "sleepH": 6.4,
+   "nightRmssdMs": 52.6,
+   "nightRmssdSdMs": 13.1,
+   "windows": 65
+  },
+  {
+   "user": "user_21",
+   "sex": "male",
+   "age": 28,
+   "sleepH": 4.55,
+   "nightRmssdMs": 38.7,
+   "nightRmssdSdMs": 6.8,
+   "windows": 72
+  },
+  {
+   "user": "user_22",
+   "sex": "male",
+   "age": 32,
+   "sleepH": 5.07,
+   "nightRmssdMs": 47.0,
+   "nightRmssdSdMs": 11.0,
+   "windows": 71
+  }
+ ]
+}

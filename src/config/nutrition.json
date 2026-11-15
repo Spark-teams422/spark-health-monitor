@@ -1,0 +1,61 @@
+{
+  "_about": "Per-person nutrition targets (team document 'Astronaut Nutrition List', 15 Nov 2026). Targets: NASA JSC 67378 (Nutritional Requirements for Exploration Missions up to 365 Days; 70 kg reference person, energy / protein / fluid recalculated from the person's mass), NASA-STD-3001 Vol. 2 section 7 (AF 1.25 minimum, +200 kcal per EVA hour). The document read these from a summary: check against the JSC 67378 PDF before real use. Not a prescription: a real list needs the flight surgeon and a dietitian.",
+  "eer": {
+    "male": { "a": 622, "age": 9.53, "kg": 15.9, "m": 539.6 },
+    "female": { "a": 354, "age": 6.91, "kg": 9.36, "m": 726 },
+    "formula": "EER = a − age_coef · age + AF · (kg_coef · kg + m_coef · height_m) (19 years and older)"
+  },
+  "activityFactors": [1.25, 1.11],
+  "defaultAF": 1.25,
+  "evaKcalPerHour": 200,
+  "proteinGPerKg": [1.2, 1.8],
+  "animalPlantMaxRatio": "60:40",
+  "fluid": { "mlPerKg": 32, "baseMl": { "male": 2500, "female": 2100 } },
+  "carbPct": [45, 65],
+  "fatPct": [20, 35],
+  "addedSugarMaxPct": 10,
+  "kcalPerG": { "protein": 4, "carb": 4, "fat": 9, "note": "standard Atwater values (proposal of the document)" },
+  "iron": {
+    "rule": "Men and women 50 or older: at most 8 mg. Women under 50 whose menstruation is not suppressed: at least 18 mg. Unknown: the rule is not applied and the person is asked.",
+    "maxMg": 8, "minMg": 18, "ageLimit": 50
+  },
+  "targets": [
+    { "id": "fiber", "label": "Fiber", "unit": "g", "male": "38", "female": "25" },
+    { "id": "sodium", "label": "Sodium", "unit": "mg", "male": "1,500–2,300", "female": "1,500–2,300" },
+    { "id": "potassium", "label": "Potassium", "unit": "mg", "male": "3,400", "female": "2,600" },
+    { "id": "calcium", "label": "Calcium", "unit": "mg", "male": "1,000–1,200", "female": "1,000–1,200" },
+    { "id": "phosphorus", "label": "Phosphorus", "unit": "mg", "male": "700 (≤ 1.5 × calcium)", "female": "700 (≤ 1.5 × calcium)" },
+    { "id": "magnesium", "label": "Magnesium", "unit": "mg", "male": "420", "female": "320" },
+    { "id": "zinc", "label": "Zinc", "unit": "mg", "male": "11", "female": "8" },
+    { "id": "vitD", "label": "Vitamin D", "unit": "µg", "male": "25 (1,000 IU)", "female": "25 (1,000 IU)" },
+    { "id": "vitA", "label": "Vitamin A", "unit": "µg RE", "male": "900 (upper limit 3,000)", "female": "700 (upper limit 3,000)" },
+    { "id": "vitE", "label": "Vitamin E", "unit": "mg TE", "male": "15", "female": "15" },
+    { "id": "vitK", "label": "Vitamin K", "unit": "µg", "male": "120", "female": "90" },
+    { "id": "vitC", "label": "Vitamin C", "unit": "mg", "male": "125", "female": "110" },
+    { "id": "b12", "label": "Vitamin B12", "unit": "µg", "male": "2.4", "female": "2.4" },
+    { "id": "folate", "label": "Folate", "unit": "µg DFE", "male": "400", "female": "400" },
+    { "id": "omega3", "label": "Omega-3", "unit": "g", "male": "1.6", "female": "1.1" },
+    { "id": "omega6", "label": "Omega-6", "unit": "g", "male": "17", "female": "12" }
+  ],
+  "meals": [
+    { "id": "breakfast", "label": "Breakfast", "share": 0.25, "categories": "Breakfast, Beverages, Fruit and nuts", "examples": "Rehydratable cereal with milk powder, fruit drink, dried fruit" },
+    { "id": "lunch", "label": "Lunch", "share": 0.3, "categories": "Rehydratable meats, Side dishes, Vegetables and soups", "examples": "Beef stroganoff with noodles (R), spinach, tortilla" },
+    { "id": "dinner", "label": "Dinner", "share": 0.3, "categories": "Meat and fish, Side dishes", "examples": "BBQ beef brisket, irradiated chicken breast, a side dish" },
+    { "id": "snack", "label": "Snack", "share": 0.15, "categories": "Desserts and snacks, Fruit and nuts", "examples": "Granola bar, nuts, dried fruit" }
+  ],
+  "mealNote": "Meal shares 25 / 30 / 30 / 15 % are the document's proposal; products are examples from NASA's ISS menu categories (no kcal per product in the source). (R) rehydratable, (T) thermostabilised. On an EVA day the extra 200 kcal per hour goes into a snack and a fluid pack (proposal).",
+  "notes": {
+    "sodium": "ISS standard menu was cut from 5,268 to about 3,300 mg/day — still above the 1,500–2,300 mg target; sodium raises bone loss (Douglas, NASA).",
+    "vitD": "Food does not cover 25 µg: tracked with the supplement; blood levels stayed low in some ISS crew even with supplements.",
+    "intake": "ISS crews ate about 85–95 % of their estimated energy need (Smith and Zwart)."
+  },
+  "openItems": [
+    "Energy alert: the nutrition document proposes below 85 %, the periodic checklist below 80 % (3 days in a row). The panel keeps the checklist rule (nutrition_kcal_pct) until the team chooses.",
+    "Whether women use the same AF as men (document: to be confirmed in JSC 67378).",
+    "Product kcal, sodium, iron and vitamin D per menu item: not in the source; menu nutrient data needed."
+  ],
+  "sample": {
+    "_about": "SAMPLE: whether menstruation is suppressed (only relevant for women under 50). null = unknown: the panel asks.",
+    "menstruationSuppressed": { "A1": null, "A3": false, "A5": true }
+  }
+}

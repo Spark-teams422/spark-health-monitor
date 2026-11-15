@@ -1,0 +1,77 @@
+{
+ "source": "NASA CCMC DONKI (Space Weather Database Of Notifications, Knowledge, Information)",
+ "url": "https://ccmc.gsfc.nasa.gov/DONKI-API/get/SEP?startDate=2022-03-25&endDate=2022-04-10",
+ "retrieved": "2026-11-14",
+ "events": [
+  {
+   "time": "2022-03-28T12:25Z",
+   "instruments": [
+    "STEREO A: IMPACT 13-100 MeV"
+   ],
+   "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/19550/-1"
+  },
+  {
+   "time": "2022-03-28T12:45Z",
+   "instruments": [
+    "GOES-P: SEISS >100 MeV"
+   ],
+   "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/19553/-1"
+  },
+  {
+   "time": "2022-03-28T13:25Z",
+   "instruments": [
+    "GOES-P: SEISS >10 MeV"
+   ],
+   "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/19558/-1"
+  },
+  {
+   "time": "2022-03-28T13:44Z",
+   "instruments": [
+    "SOHO: COSTEP 15.8-39.8 MeV"
+   ],
+   "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/19563/-1"
+  },
+  {
+   "time": "2022-03-30T18:24Z",
+   "instruments": [
+    "STEREO A: IMPACT 13-100 MeV"
+   ],
+   "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/19594/-1"
+  },
+  {
+   "time": "2022-03-31T04:33Z",
+   "instruments": [
+    "SOHO: COSTEP 15.8-39.8 MeV"
+   ],
+   "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/19613/-1"
+  },
+  {
+   "time": "2022-03-31T06:20Z",
+   "instruments": [
+    "GOES-P: SEISS >10 MeV"
+   ],
+   "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/19605/-1"
+  },
+  {
+   "time": "2022-04-02T14:30Z",
+   "instruments": [
+    "GOES-P: SEISS >10 MeV"
+   ],
+   "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/19633/-1"
+  },
+  {
+   "time": "2022-04-02T14:38Z",
+   "instruments": [
+    "SOHO: COSTEP 15.8-39.8 MeV"
+   ],
+   "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/19639/-1"
+  },
+  {
+   "time": "2022-04-02T14:39Z",
+   "instruments": [
+    "SOHO: COSTEP 28.2-50.1 MeV"
+   ],
+   "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/19640/-1"
+  }
+ ]
+}

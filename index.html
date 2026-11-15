@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astronaut Health Monitor</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // If the app fails to start, show the error instead of a blank page (helps on browsers we did not test).
+      (function () {
+        function show(msg) {
+          var box = document.getElementById("boot-error") || document.body.appendChild(Object.assign(document.createElement("pre"), { id: "boot-error" }));
+          box.style.cssText = "position:fixed;left:0;right:0;bottom:0;max-height:50vh;overflow:auto;margin:0;padding:12px;background:#300;color:#fff;font:13px/1.4 monospace;white-space:pre-wrap;z-index:99999";
+          box.textContent += "Error: " + msg + "\n";
+        }
+        window.addEventListener("error", function (e) { if (e.target && e.target !== window) return show("failed to load " + (e.target.src || e.target.href || e.target.tagName)); show((e.message || e.type) + (e.filename ? " @ " + e.filename + ":" + e.lineno : "") + (e.error && e.error.stack ? "\n" + e.error.stack : "")); }, true);
+        window.addEventListener("unhandledrejection", function (e) { show("Promise: " + (e.reason && (e.reason.stack || e.reason.message) || e.reason)); });
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

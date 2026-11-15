@@ -1,0 +1,13 @@
+{
+  "_about": "EVA emergency menu (EVA Panel v2, 'EVA emergency menu'). First suit steps only; after the airlock the normal decision tree continues. Reviewed 15 Nov 2026 against the document: notify when the menu opens, sensor-triggered option pre-selected, 'Something else' lists the S4 signs (suit version), partner flow compares both return times, heat shows core and skin temperature.",
+  "commonFirstSteps": "Stop in a safe place, call your partner, start the return. No CPR, medication or wound care is possible in the suit.",
+  "options": [
+    { "id": "pressure", "label": "Pressure loss or leak", "shows": ["eva_suit_pressure"], "goesTo": "M4 Critical flow; A-DCS if symptoms", "steps": ["Switch to backup O₂", "Start the return", "Partner looks for the leak point"] },
+    { "id": "breath", "label": "Shortness of breath or headache", "shows": ["eva_pico2"], "goesTo": "M5 Critical flow if PICO₂ is high; otherwise C-HYPOXIA", "steps": ["Slow down", "Check CO₂ scrubbing", "Start the return"] },
+    { "id": "faint", "label": "Feeling faint or dizzy", "shows": ["eva_heart_rate", "eva_ori"], "goesTo": "C-FAINTING", "steps": ["Sit or lie down", "Partner comes to you", "EVA ends"] },
+    { "id": "heat", "label": "Overheating", "shows": ["eva_core_temp", "eva_skin_rise"], "goesTo": "A-HEAT", "steps": ["Set cooling to maximum", "Stop", "Start the return"] },
+    { "id": "joint", "label": "Joint pain or numbness", "shows": ["eva_suit_pressure"], "goesTo": "C-EVA-HAND if only fingertips and fading; otherwise A-DCS", "steps": ["Raise suit pressure per procedure", "Return to the airlock"] },
+    { "id": "partner", "label": "Partner injured or not responding", "shows": ["eva_partner_voice_loss"], "goesTo": "Partner flow", "steps": ["Go to your partner; try voice and hand signals", "Check their pressure, O₂ and heart rate on your panel", "If pressure is falling, check their backup O₂ engaged", "Alert the habitat", "Start the assisted return"] },
+    { "id": "other", "label": "Something else", "shows": [], "goesTo": "Decision tree S4 labels (suit version)", "steps": [] }
+  ]
+}

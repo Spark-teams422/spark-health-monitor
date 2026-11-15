@@ -1,0 +1,451 @@
+{
+ "_about": "SYNTHETIC preflight baselines (Personal Baseline and Sex Differences, 15 Nov 2026: real astronaut data sits in LSAH/LSDA and is not public; a synthetic astronaut must be labelled 'synthetic data'). Per astronaut and parameter: supine / seated / standing median and MAD over preflight sessions. Supine values equal the simulator's resting values; seated and standing shifts are illustrative. A5 has only 3 sessions on purpose (cold start: no personal baseline, absolute limits only). In real use the flight surgeon / CMO imports these.",
+ "synthetic": true,
+ "crew": {
+  "A1": {
+   "sex": "female",
+   "baseline": {
+    "bp_systolic": {
+     "supine": {
+      "median": 118,
+      "mad": 3.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 120,
+      "mad": 3.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 116,
+      "mad": 3.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    },
+    "bp_diastolic": {
+     "supine": {
+      "median": 74,
+      "mad": 2.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 78,
+      "mad": 2.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 82,
+      "mad": 2.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    },
+    "spo2": {
+     "supine": {
+      "median": 97,
+      "mad": 0.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 97,
+      "mad": 0.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 97,
+      "mad": 0.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    },
+    "body_temp": {
+     "supine": {
+      "median": 37.3,
+      "mad": 0.1,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 37.3,
+      "mad": 0.1,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 37.3,
+      "mad": 0.1,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    }
+   },
+   "flightBaseline": {
+    "update": "14_day_rolling_median",
+    "start": null
+   }
+  },
+  "A2": {
+   "sex": "male",
+   "baseline": {
+    "bp_systolic": {
+     "supine": {
+      "median": 114,
+      "mad": 3.5,
+      "sessions": 7,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 116,
+      "mad": 3.5,
+      "sessions": 7,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 112,
+      "mad": 3.5,
+      "sessions": 7,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    },
+    "bp_diastolic": {
+     "supine": {
+      "median": 72,
+      "mad": 2.5,
+      "sessions": 7,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 76,
+      "mad": 2.5,
+      "sessions": 7,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 80,
+      "mad": 2.5,
+      "sessions": 7,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    },
+    "spo2": {
+     "supine": {
+      "median": 98,
+      "mad": 0.5,
+      "sessions": 7,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 98,
+      "mad": 0.5,
+      "sessions": 7,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 98,
+      "mad": 0.5,
+      "sessions": 7,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    },
+    "body_temp": {
+     "supine": {
+      "median": 37.2,
+      "mad": 0.1,
+      "sessions": 7,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 37.2,
+      "mad": 0.1,
+      "sessions": 7,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 37.2,
+      "mad": 0.1,
+      "sessions": 7,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    }
+   },
+   "flightBaseline": {
+    "update": "14_day_rolling_median",
+    "start": null
+   }
+  },
+  "A3": {
+   "sex": "female",
+   "baseline": {
+    "bp_systolic": {
+     "supine": {
+      "median": 121,
+      "mad": 3.5,
+      "sessions": 5,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 123,
+      "mad": 3.5,
+      "sessions": 5,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 119,
+      "mad": 3.5,
+      "sessions": 5,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    },
+    "bp_diastolic": {
+     "supine": {
+      "median": 76,
+      "mad": 2.5,
+      "sessions": 5,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 80,
+      "mad": 2.5,
+      "sessions": 5,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 84,
+      "mad": 2.5,
+      "sessions": 5,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    },
+    "spo2": {
+     "supine": {
+      "median": 97,
+      "mad": 0.5,
+      "sessions": 5,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 97,
+      "mad": 0.5,
+      "sessions": 5,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 97,
+      "mad": 0.5,
+      "sessions": 5,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    },
+    "body_temp": {
+     "supine": {
+      "median": 37.4,
+      "mad": 0.1,
+      "sessions": 5,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 37.4,
+      "mad": 0.1,
+      "sessions": 5,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 37.4,
+      "mad": 0.1,
+      "sessions": 5,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    }
+   },
+   "flightBaseline": {
+    "update": "14_day_rolling_median",
+    "start": null
+   }
+  },
+  "A4": {
+   "sex": "male",
+   "baseline": {
+    "bp_systolic": {
+     "supine": {
+      "median": 122,
+      "mad": 3.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 124,
+      "mad": 3.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 120,
+      "mad": 3.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    },
+    "bp_diastolic": {
+     "supine": {
+      "median": 76,
+      "mad": 2.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 80,
+      "mad": 2.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 84,
+      "mad": 2.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    },
+    "spo2": {
+     "supine": {
+      "median": 97,
+      "mad": 0.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 97,
+      "mad": 0.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 97,
+      "mad": 0.5,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    },
+    "body_temp": {
+     "supine": {
+      "median": 37.1,
+      "mad": 0.1,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 37.1,
+      "mad": 0.1,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 37.1,
+      "mad": 0.1,
+      "sessions": 6,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    }
+   },
+   "flightBaseline": {
+    "update": "14_day_rolling_median",
+    "start": null
+   }
+  },
+  "A5": {
+   "sex": "female",
+   "baseline": {
+    "bp_systolic": {
+     "supine": {
+      "median": 110,
+      "mad": 3.5,
+      "sessions": 3,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 112,
+      "mad": 3.5,
+      "sessions": 3,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 108,
+      "mad": 3.5,
+      "sessions": 3,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    },
+    "bp_diastolic": {
+     "supine": {
+      "median": 70,
+      "mad": 2.5,
+      "sessions": 3,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 74,
+      "mad": 2.5,
+      "sessions": 3,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 78,
+      "mad": 2.5,
+      "sessions": 3,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    },
+    "spo2": {
+     "supine": {
+      "median": 98,
+      "mad": 0.5,
+      "sessions": 3,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 98,
+      "mad": 0.5,
+      "sessions": 3,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 98,
+      "mad": 0.5,
+      "sessions": 3,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    },
+    "body_temp": {
+     "supine": {
+      "median": 37.0,
+      "mad": 0.1,
+      "sessions": 3,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "seated": {
+      "median": 37.0,
+      "mad": 0.1,
+      "sessions": 3,
+      "dates": "2026-01-12/2026-05-28"
+     },
+     "standing": {
+      "median": 37.0,
+      "mad": 0.1,
+      "sessions": 3,
+      "dates": "2026-01-12/2026-05-28"
+     }
+    }
+   },
+   "flightBaseline": {
+    "update": "14_day_rolling_median",
+    "start": null
+   }
+  }
+ }
+}

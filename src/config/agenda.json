@@ -1,0 +1,28 @@
+{
+  "_about": "Tasks & Calendar sample data (not real, not medical): tasks assigned by the commander or the flight plan, tasks sent by Earth, crew birthdays (visible to the whole crew) and family birthdays (visible only to that astronaut). day = mission day, hour = UTC. 'all' = every crew member. Replace with the mission timeline.",
+  "assigned": [
+    { "crewIds": ["A2"], "from": "Commander", "label": "Medical kit inventory and expiry check", "day": 142, "hour": 13 },
+    { "crewIds": ["A3", "A1"], "from": "Commander", "label": "Prepare EVA tools and suit batteries for day 143", "day": 142, "hour": 15 },
+    { "crewIds": ["A4"], "from": "Commander", "label": "Replace CO₂ scrubber cartridge (life support)", "day": 142, "hour": 11 },
+    { "crewIds": ["A5"], "from": "Commander", "label": "Plant growth experiment: photographs and water", "day": 142, "hour": 10 },
+    { "crewIds": ["all"], "from": "Commander", "label": "Crew meeting: week plan", "day": 144, "hour": 9 },
+    { "crewIds": ["A4", "A5"], "from": "Commander", "label": "Robot arm training session", "day": 145, "hour": 14 },
+    { "crewIds": ["A2"], "from": "Commander", "label": "Water recycler sample for the lab", "day": 146, "hour": 10 },
+    { "crewIds": ["all"], "from": "Commander", "label": "Emergency drill: depressurisation", "day": 149, "hour": 16 }
+  ],
+  "earth": [
+    { "crewIds": ["all"], "from": "Mission Control", "label": "Daily planning conference", "day": 142, "hour": 16 },
+    { "crewIds": ["A1", "A2", "A3", "A4", "A5"], "from": "Flight surgeon", "label": "Private medical conference (weekly)", "day": 143, "hour": 17 },
+    { "crewIds": ["A5"], "from": "Science team", "label": "Downlink of the plant experiment data", "day": 144, "hour": 12 },
+    { "crewIds": ["A3"], "from": "Mission Control", "label": "Suit panel software update", "day": 146, "hour": 9 },
+    { "crewIds": ["all"], "from": "Mission Control", "label": "Family video call window", "day": 147, "hour": 18 }
+  ],
+  "birthdays": { "A1": "1982-03-12", "A2": "1987-11-20", "A3": "1990-07-02", "A4": "1985-12-03", "A5": "1992-11-27" },
+  "family": {
+    "A1": [{ "name": "Lucas", "relation": "son", "date": "2015-11-18" }, { "name": "Marta", "relation": "mother", "date": "1956-12-09" }],
+    "A2": [{ "name": "Yui", "relation": "daughter", "date": "2019-11-25" }],
+    "A3": [{ "name": "Chidi", "relation": "partner", "date": "1989-11-16" }],
+    "A4": [{ "name": "Anna", "relation": "wife", "date": "1986-11-29" }, { "name": "Felix", "relation": "son", "date": "2016-12-14" }],
+    "A5": [{ "name": "Ravi", "relation": "father", "date": "1960-11-22" }]
+  }
+}

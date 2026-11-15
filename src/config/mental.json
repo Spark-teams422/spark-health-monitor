@@ -1,0 +1,11 @@
+{
+  "_about": "Mental check-in settings from 'Mental Health notes'. The score is a self-report (1-100, higher = more stress). It is shown as a score on the health screen and never raises an alarm: the documents define no yellow/red limit for it.",
+  "bands": [
+    { "max": 30, "label": "Calm & focused", "color": "#2dd4bf" },
+    { "max": 60, "label": "Low energy / isolation", "color": "#8b7cf6" },
+    { "max": 100, "label": "High stress / anxiety", "color": "#fb7a3c" }
+  ],
+  "emotions": ["Tired", "Overwhelmed", "Unfocused", "Tense", "Peaceful"],
+  "triggers": ["Sleep / circadian disruption", "Cabin isolation", "Excessive workload", "Crew communication"],
+  "breathing": { "inhaleS": 4, "holdS": 4, "exhaleS": 4, "totalS": 60 }
+}

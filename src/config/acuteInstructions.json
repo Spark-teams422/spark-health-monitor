@@ -1,0 +1,260 @@
+{
+  "_about": "EMERGENCY (15) and PRIORITY (17) instruction cards, transcribed and translated from 'Astronaut Acute Health Decision Tree, v3'. Medication and dose decisions are left to the mission medical kit procedure and the crew medical officer (CMO); the panel never states a dose. Environment prefixes: Microgravity / Landing-surface / Suit. Draft awaiting physician approval.",
+  "A-ENVIRONMENT": {
+    "level": "emergency", "title": "Cabin atmosphere hazard",
+    "now": ["Put on your own mask.", "Raise the alarm, warn the crew.", "If there is a fire: cut power and extinguish per mission procedure.", "Move the affected person to a module with clean air and close the hatch.", "Give the affected person oxygen by mask."],
+    "waiting": ["Check consciousness, breathing and SpO₂ every 5 minutes.", "If the eyes burn, rinse them. Microgravity: with the closed cap of the eyewash kit, no free water.", "Record cabin O₂, CO₂, pressure and contaminant values (the panel records them itself).", "Do not leave the clean module until readings are back to normal."],
+    "monitor": "SpO₂, consciousness question and cabin values every 5 minutes.",
+    "comms": "Time of the event, cabin readings, affected people and their symptoms.",
+    "worse": "SpO₂ ≤85 or no answer to the consciousness question → A-CONSCIOUSNESS; not breathing → A-CPR."
+  },
+  "A-CPR": {
+    "level": "emergency", "title": "Unconscious, not breathing: possible cardiac arrest",
+    "now": ["Call the crew loudly.", "Secure the person. Microgravity: strap to a hard surface and secure yourself; use the microgravity CPR technique of the mission procedure. Landing-surface: lay flat on the back. Suit: CPR is not possible in a suit; emergency return to the airlock, continue once the suit is off.", "Start chest compressions at once: centre of the chest, 100–120 per minute, 5–6 cm deep.", "A second person attaches the AED and follows its voice prompts.", "If trained, give 2 breaths every 30 compressions or use a bag-valve mask with oxygen."],
+    "waiting": ["Change the person doing compressions every 2 minutes (the panel shows a countdown).", "Follow the AED prompts; continue without stopping.", "A third person keeps the record; with a crew of 2 the panel records times and AED events itself."],
+    "monitor": "ECG and AED events continuously; 2-minute timer for changing the compressor.",
+    "comms": "CPR start time, number of AED shocks, outcome, ECG record.",
+    "worse": "If the person moves or breathes → A-CONSCIOUSNESS."
+  },
+  "A-CONSCIOUSNESS": {
+    "level": "emergency", "title": "Unconscious but breathing",
+    "now": ["Make sure the environment is safe.", "Keep the airway open. Microgravity: secure with straps, head turned to the side; vomit bag and suction (if in the kit) ready. Landing-surface: recovery position. Suit: partner comes over, voice check every minute; emergency return to the airlock.", "Attach pulse, SpO₂, blood pressure, ECG and temperature sensors.", "Measure blood glucose (i-STAT). If below 55 mg/dL: glucagon or IV glucose per kit procedure (trained person, double check).", "If SpO₂ is low, give oxygen by mask."],
+    "waiting": ["Watch breathing continuously; if it stops, start CPR at once.", "Record readings every 5 minutes (the panel reads them itself).", "Note what happened before: EVA, blow, medication, food, fever, chest pain."],
+    "monitor": "SpO₂, pulse, blood pressure, ECG every 5 minutes.",
+    "comms": "Time consciousness was lost, sensor records, blood glucose, notes on what came before.",
+    "worse": "Not breathing or no pulse → A-CPR."
+  },
+  "A-BLEEDING": {
+    "level": "emergency", "title": "Serious bleeding",
+    "now": ["Put on gloves; use an absorbent pad so blood droplets do not spread.", "Press on the wound with gauze continuously; do not lift it.", "If blood soaks through, add a new pad on top of the old one.", "If it does not stop on an arm or leg, apply the tourniquet 5–8 cm above the wound; the panel records the tourniquet time."],
+    "waiting": ["Keep pressing for at least 10 minutes.", "Keep the person warm.", "Check pulse, blood pressure and consciousness every 5 minutes.", "When the bleeding stops, close the wound and go to C-CUT-DEEP."],
+    "monitor": "Pulse and blood pressure every 5 minutes; tourniquet time.",
+    "comms": "Wound location, tourniquet time, estimated loss, readings, photo.",
+    "worse": "Pulse >120 and systolic ≤90 mmHg (proposal), paleness, sweating or confusion (shock) → give oxygen. Landing-surface: raise the legs. Microgravity: skip the position step; IV fluid per kit procedure (trained person). Tourniquet over 2 hours raises the package priority (proposal)."
+  },
+  "A-ANAPHYLAXIS": {
+    "level": "emergency", "title": "Possible severe allergic reaction (anaphylaxis)",
+    "now": ["Use the adrenaline auto-injector on the outer thigh at once; do not wait.", "Move away from the trigger (food, medication, material).", "Give oxygen by mask.", "Position: half-sitting if short of breath. If dizzy, Landing-surface: legs raised; Microgravity: skip the position step, secure the person."],
+    "waiting": ["Measure pulse, SpO₂ and blood pressure every 5 minutes.", "If there is no improvement in 5–15 minutes, give the second dose (per kit procedure, double check).", "Give the allergy medication per kit procedure.", "Even if improved, stay with the person for at least 4–6 hours; symptoms can return."],
+    "monitor": "Pulse, SpO₂, blood pressure every 5 minutes; 5–15 minute timer for the second dose; 4–6 hour observation counter.",
+    "comms": "Trigger, injection times, readings, remaining adrenaline stock.",
+    "worse": "At minute 15, systolic ≤90 or SpO₂ ≤91 persists → second-dose alert. Breathing stops → A-CPR."
+  },
+  "A-HEART": {
+    "level": "emergency", "title": "Possible heart attack",
+    "now": ["Stop all activity, secure the person.", "Attach the ECG at once and record.", "If SpO₂ is low, give oxygen.", "Bring the AED close.", "Give aspirin per kit procedure; do not give if allergic (double check)."],
+    "waiting": ["Record ECG and blood pressure continuously.", "Ask and write down pain severity (1–10) every 10 minutes.", "If the EVA flag is set, also follow the A-DCS steps.", "Painkillers and other medication: per kit procedure."],
+    "monitor": "ECG continuously; blood pressure and pain score every 10 minutes.",
+    "comms": "Time the pain started, ECG records, medication given and times.",
+    "worse": "Ventricular tachycardia >32 beats, pause >3 s or loss of consciousness → A-CPR with AED."
+  },
+  "A-RHYTHM": {
+    "level": "emergency", "title": "Possible heart rhythm disorder",
+    "now": ["Secure the person. Landing-surface: lying down.", "Attach the ECG and record.", "Keep the AED attached and ready."],
+    "waiting": ["Monitor pulse, blood pressure and SpO₂ continuously.", "Note triggers: caffeine, lack of sleep, fluid loss, medication.", "Do not leave the person alone."],
+    "monitor": "ECG continuously; pulse, blood pressure, SpO₂ every 5 minutes.",
+    "comms": "Time of symptoms, ECG rhythm records.",
+    "worse": "Loss of consciousness → A-CPR with AED. Systolic ≤90 → package at highest priority."
+  },
+  "A-ABDOMEN": {
+    "level": "emergency", "title": "Acute abdomen (appendicitis, bowel obstruction, etc.)",
+    "now": ["Nothing to eat or drink by mouth.", "Secure the person in the most comfortable position.", "Do not press on or massage the abdomen.", "Measure temperature, pulse and blood pressure."],
+    "waiting": ["Record readings every 15 minutes; write down the number of vomits.", "If ultrasound is available, take and save images per procedure.", "Painkiller and antibiotic: per kit procedure (double check for the antibiotic)."],
+    "monitor": "Temperature, pulse, blood pressure every 15 minutes; qSOFA.",
+    "comms": "Readings, ultrasound images, medication given. Ask for information for an evacuation or surgery decision.",
+    "worse": "qSOFA ≥2 → A-SEPSIS."
+  },
+  "A-SEPSIS": {
+    "level": "emergency", "title": "Possible sepsis (infection spreading through the body)",
+    "now": ["Measure temperature, pulse, breathing rate, blood pressure and SpO₂.", "If SpO₂ is low, give oxygen.", "Start the antibiotic without waiting (per kit procedure, double check)."],
+    "waiting": ["Give fluids: by mouth if they can swallow, otherwise IV (trained person).", "Look for the source of infection: urine, cough, wound, abdomen.", "Check consciousness and readings every 15 minutes."],
+    "monitor": "Temperature, pulse, breathing, blood pressure, SpO₂ every 15 minutes.",
+    "comms": "Readings, antibiotic time, possible source.",
+    "worse": "If systolic ≤90 persists, the fluid step moves first; if consciousness drops → A-CONSCIOUSNESS."
+  },
+  "A-EYE": {
+    "level": "emergency", "title": "Eye emergency",
+    "now": ["If a chemical got in: rinse with the eyewash kit for at least 15 minutes. Microgravity: with the closed cap of the kit, no free water.", "Do not remove an embedded object; cover the eye with a rigid shield without pressing.", "Stop them from rubbing the eye."],
+    "waiting": ["If there is a contact lens, remove it (after rinsing a chemical).", "Test and record the vision of each eye separately.", "Painkiller: per kit procedure."],
+    "monitor": "Vision test reminder every hour (proposal).",
+    "comms": "Time of the event, vision test results, photo.",
+    "worse": "If vision loss progresses, the package goes at highest priority."
+  },
+  "A-BRAIN": {
+    "level": "emergency", "title": "Possible stroke / brain emergency",
+    "now": ["Write down the time the symptoms started.", "Secure the person; give nothing by mouth.", "Measure blood glucose (i-STAT). Low blood sugar can mimic stroke signs: if low, correct per kit procedure and repeat the face-arm-speech test.", "If SpO₂ is low, give oxygen."],
+    "waiting": ["Repeat and record the face-arm-speech test every 15 minutes.", "Record blood pressure, pulse and SpO₂.", "In case of vomiting. Landing-surface: lay on the side. Microgravity: secure with the head turned to the side, vomit bag and suction ready."],
+    "monitor": "Face-arm-speech test reminder every 15 minutes; blood pressure, SpO₂.",
+    "comms": "Start time, test results, blood glucose, readings.",
+    "worse": "Loss of consciousness → A-CONSCIOUSNESS."
+  },
+  "A-DCS": {
+    "level": "emergency", "title": "Possible decompression sickness",
+    "now": ["Give 100 % oxygen at once.", "Repressurise: in the cabin or habitat per mission procedure. Suit: raise suit pressure per procedure and return to the airlock."],
+    "waiting": ["Assess joint pain, numbness, vision and breathing every 15 minutes.", "Give fluids, let the person rest.", "Record the time of symptoms; the panel adds the EVA pressure profile to the package."],
+    "monitor": "Assessment reminder every 15 minutes; SpO₂.",
+    "comms": "EVA profile, symptom times, pressure and oxygen applied.",
+    "worse": "New neurological sign or shortness of breath → package at highest priority; if consciousness drops → A-CONSCIOUSNESS."
+  },
+  "A-RAD": {
+    "level": "emergency", "title": "Signs of acute radiation exposure",
+    "now": ["Move the crew to the sheltered area (storm shelter).", "Write down the time of the first vomiting; it is the most important sign of how large the exposure was."],
+    "waiting": ["Record dosimeter and module radiation values (the panel records them itself).", "Replace lost fluids.", "Anti-nausea medication: per kit procedure.", "Protect reddened skin; do not scratch."],
+    "monitor": "Dosimeter and dose rate continuously.",
+    "comms": "Time of first vomiting, dose values, symptoms.",
+    "worse": "If the dose rate goes red, the shelter alert is repeated to the whole crew."
+  },
+  "A-PSYCH": {
+    "level": "emergency", "title": "Risk of self-harm",
+    "now": ["Do not leave the person alone; speak calmly and without judging.", "Put sharp tools and medication away in a safe place.", "Assign a crew member to stay with them continuously."],
+    "waiting": ["Keep the companion watch unbroken; rotate in shifts (the panel keeps the shift schedule).", "Keep talking with the person and listening to them."],
+    "monitor": "Companion shift timer; alarm to the crew if there is a gap.",
+    "comms": "Ask for a session with the psychological support team in the first communication window.",
+    "worse": ""
+  },
+  "A-HEAT": {
+    "level": "emergency", "title": "Heat stroke / overheating",
+    "now": ["Stop the activity at once.", "Cool down. Suit: set cooling water flow to maximum; the return starts on the EVA panel. Microgravity: remove clothing layers, use a wet cloth and a fan, put cold packs on neck, armpits and groin; no free water. Landing-surface: same steps, and lay the person down.", "If conscious and able to swallow, give fluids.", "Measure blood glucose (i-STAT)."],
+    "waiting": ["Keep cooling until core temperature is below 38.5 °C (proposal).", "Monitor pulse, blood pressure and SpO₂.", "IV fluid per kit procedure (if unable to swallow, trained person)."],
+    "monitor": "Core temperature every 5 minutes; pulse, blood pressure, SpO₂.",
+    "comms": "Temperature curve, time cooling started, effort and suit data before the event.",
+    "worse": "Consciousness drops or a seizure occurs → A-CONSCIOUSNESS. If temperature does not fall within 30 minutes, the package goes at highest priority."
+  },
+
+  "C-ENVIRONMENT-CO2": {
+    "level": "priority", "title": "Gradual CO₂ rise, mild symptoms in the crew",
+    "now": ["Move those affected to a module with strong ventilation; switch on local fans.", "Check the CO₂ removal system (CDRA) per mission procedure; if it has failed, switch to the backup system.", "Stop exercise and heavy work.", "Measure the SpO₂ of everyone affected."],
+    "waiting": ["Drink water; painkiller if needed (per kit procedure).", "Give those with symptoms the 20-minute Cognition test and the Amsler grid test.", "Postpone critical tasks (EVA, robotic arm, docking) until CO₂ is below the yellow band."],
+    "monitor": "Cabin CO₂ 1-hour average and SpO₂ of those affected, every 15 minutes.",
+    "comms": "CO₂ curve, CDRA status, who is affected and symptom severity, test scores.",
+    "worse": "CO₂ passes the emergency level, someone's SpO₂ is ≤91, or nausea, confusion or fast breathing starts → A-ENVIRONMENT."
+  },
+  "C-FAINTING": {
+    "level": "priority", "title": "Feeling faint (heart rhythm looks normal)",
+    "now": ["Secure the person; measure pulse, blood pressure and ECG.", "Measure blood glucose (i-STAT). If below 70 mg/dL and able to swallow, give a sugary drink or glucose (per kit procedure).", "By environment. Landing-surface: lay down, raise the legs; the G-TRANSIT panel opens. Microgravity: no position step; fainting is rare in microgravity. If ECG and blood glucose are normal, ask about fluids, sleep and medication. Suit: sit or lie down, partner comes over, EVA ends."],
+    "waiting": ["Give fluids; ask the time of the last meal.", "Prevent sudden standing and fast movement."],
+    "monitor": "Blood pressure and pulse every 15 minutes; ECG continuously.",
+    "comms": "Readings, time of the event, last meal and fluid intake, blood glucose, G-TRANSIT summary (if any).",
+    "worse": "Irregular ECG or pulse <40 or >150 → A-RHYTHM; chest pain → A-HEART; ORI ≥80, perfusion margin <5 mmHg or loss of consciousness → A-CONSCIOUSNESS; blood glucose <55 mg/dL → glucose per kit procedure, package EMERGENCY."
+  },
+  "C-BURN-SEVERE": {
+    "level": "priority", "title": "Serious burn",
+    "now": ["Remove the source (for electricity, switch the power off first).", "If chemical, rinse. Microgravity: with an absorbent pad, no free water.", "Cool the burn for 20 minutes (not ice). Microgravity: wet sterile cloth or cold pack. Landing-surface: cool water or wet cloth."],
+    "waiting": ["Remove jewellery; do not tear off fabric that is stuck.", "Cover loosely with a non-stick sterile dressing.", "Do not let the person get cold; give fluids.", "Painkiller: per kit procedure."],
+    "monitor": "Pulse and blood pressure every hour (proposal); breathing question every 15 minutes for a face or neck burn.",
+    "comms": "Location and size of the burn, photo.",
+    "worse": "Face or neck burn with hoarseness or difficulty breathing → give oxygen, package EMERGENCY."
+  },
+  "C-HEAD-SEVERE": {
+    "level": "priority", "title": "Signs of serious head injury",
+    "now": ["Secure the person without movement; if the neck hurts, do not move the neck.", "Measure and record blood glucose (i-STAT)."],
+    "waiting": ["Check consciousness, pupils, speech and arm-leg strength every 15 minutes.", "If they sleep, wake them at regular intervals.", "Painkiller: per kit procedure."],
+    "monitor": "Neurological check reminder every 15 minutes.",
+    "comms": "Time of the event, check records, blood glucose.",
+    "worse": "Falling consciousness, repeated vomiting or one-sided weakness → A-BRAIN."
+  },
+  "C-CUT-DEEP": {
+    "level": "priority", "title": "Deep cut",
+    "now": ["Stop the bleeding by pressing.", "Rinse the wound with plenty of clean water. Microgravity: with an absorbent pad, no free water."],
+    "waiting": ["Bring the wound edges together with adhesive strips, or close per kit procedure (needs training).", "Cover with a sterile dressing; take a photo."],
+    "monitor": "The panel asks a wound question and for a photo once a day: redness, swelling, fever.",
+    "comms": "Photo, closure method.",
+    "worse": "Redness spreads and fever appears → C-SKIN-INFECTION."
+  },
+  "C-FRACTURE-OPEN": {
+    "level": "priority", "title": "Possible fracture / dislocation",
+    "now": ["Do not move the area or try to straighten it.", "If bone is exposed, cover with a sterile dressing; do not press.", "Splint in the position found."],
+    "waiting": ["Cool for 20 minutes with ice wrapped in cloth.", "Painkiller: per kit procedure."],
+    "monitor": "Question every 30 minutes on colour, warmth and feeling of the fingers or toes beyond the splint.",
+    "comms": "Photo, ultrasound image (if any), circulation checks.",
+    "worse": "If circulation worsens, the package goes at highest priority."
+  },
+  "C-FRACTURE-SUSPECTED": {
+    "level": "priority", "title": "Suspected fracture / crack",
+    "now": ["Support the area with a splint or bandage.", "Stop strenuous exercise."],
+    "waiting": ["Apply cold; keep the area raised.", "If ultrasound is available, take images per procedure."],
+    "monitor": "Circulation question (colour, warmth, feeling) every 4 hours (proposal).",
+    "comms": "Photo, ultrasound image.",
+    "worse": "If circulation worsens → C-FRACTURE-OPEN."
+  },
+  "C-EYE-TRAUMA": {
+    "level": "priority", "title": "Blow to the eye",
+    "now": ["Apply cold around the eye without pressing.", "Stop them from rubbing the eye."],
+    "waiting": ["Test and record the vision of both eyes.", "If there is bleeding in the eye, double vision or flashes of light, protect the eye with a shield and rest it."],
+    "monitor": "Vision test reminder every 4 hours (proposal).",
+    "comms": "Vision test results, photo.",
+    "worse": "Sudden drop in vision → A-EYE."
+  },
+  "C-SANS": {
+    "level": "priority", "title": "Slow change in vision, suspected SANS",
+    "now": ["Test near and far vision of both eyes; record the Amsler grid."],
+    "waiting": ["If an eye imaging device (OCT / fundus) is available, take images per procedure.", "Use the plus-power glasses for reading."],
+    "monitor": "The panel adds vision and Amsler tests as a weekly periodic task.",
+    "comms": "Test results, images, accompanying headache and cabin CO₂ values.",
+    "worse": "If vision drops suddenly → A-EYE."
+  },
+  "C-TOOTH-ABSCESS": {
+    "level": "priority", "title": "Suspected dental abscess",
+    "now": ["Rinse the mouth with warm salt water. Microgravity: hold without swallowing, collect with an absorbent cloth.", "Measure temperature."],
+    "waiting": ["Mark the edge of the swelling with a pen; take a photo.", "Painkiller and antibiotic: per kit procedure (double check for the antibiotic)."],
+    "monitor": "Photo of the swelling and temperature every 6 hours.",
+    "comms": "Photos, temperature records, medication given.",
+    "worse": "Swelling spreads to the eye or neck, or swallowing becomes hard → package EMERGENCY, start the antibiotic without waiting."
+  },
+  "C-BREATHING-SEVERE": {
+    "level": "priority", "title": "Respiratory infection, signs of worsening",
+    "now": ["Measure SpO₂, breathing rate and temperature.", "If SpO₂ is low, give oxygen."],
+    "waiting": ["Rest apart from the crew as far as possible; drink plenty of fluids.", "Fever reducer and antibiotic: per kit procedure."],
+    "monitor": "SpO₂, breathing and temperature every 4 hours; qSOFA.",
+    "comms": "Reading records, course of symptoms.",
+    "worse": "SpO₂ ≤91 → oxygen, package EMERGENCY; qSOFA ≥2 → A-SEPSIS."
+  },
+  "C-HYPOXIA": {
+    "level": "priority", "title": "Possible lack of oxygen",
+    "now": ["Measure SpO₂ and the cabin O₂ value (the panel shows both side by side).", "If SpO₂ is low, give oxygen.", "Stop exertion and EVA preparation."],
+    "waiting": ["Monitor SpO₂ during sleep."],
+    "monitor": "SpO₂ continuously, including sleep.",
+    "comms": "SpO₂ and cabin O₂ records.",
+    "worse": "If the symptom appears in others too → environment rule (A-ENVIRONMENT or C-ENVIRONMENT-CO2). SpO₂ ≤85, confusion or shortness of breath at rest → oxygen, package EMERGENCY."
+  },
+  "C-UTI-SEVERE": {
+    "level": "priority", "title": "Urinary tract infection, suspected spread to the kidney",
+    "now": ["Measure temperature, pulse and blood pressure.", "Start the antibiotic without waiting (per kit procedure, double check)."],
+    "waiting": ["Give plenty of fluids.", "If a urine test strip is available, test and record."],
+    "monitor": "Temperature, pulse, blood pressure every 4 hours; qSOFA.",
+    "comms": "Readings, test result, antibiotic time.",
+    "worse": "qSOFA ≥2 (confusion, fast breathing, low blood pressure) → A-SEPSIS."
+  },
+  "C-KIDNEY-STONE": {
+    "level": "priority", "title": "Suspected kidney stone",
+    "now": ["Painkiller: per kit procedure.", "Increase fluid intake.", "Measure temperature."],
+    "waiting": ["Check the urine with a test strip.", "If ultrasound is available, take images per procedure."],
+    "monitor": "Pain score every hour; temperature.",
+    "comms": "Course of pain, test result, images, fluid summary of the last 7 days.",
+    "worse": "Fever, shivering or no urine for 12 hours → package EMERGENCY, antibiotic (per kit procedure)."
+  },
+  "C-APPENDICITIS": {
+    "level": "priority", "title": "Suspected appendicitis",
+    "now": ["Nothing to eat or drink by mouth.", "Measure temperature, pulse and blood pressure."],
+    "waiting": ["If ultrasound is available, take images per procedure.", "Painkiller and antibiotic: per kit procedure."],
+    "monitor": "Temperature, pulse, blood pressure every hour; qSOFA.",
+    "comms": "Readings, images. Ask for information for an evacuation or surgery decision.",
+    "worse": "Pain spreads over the whole abdomen or the abdomen becomes hard → A-ABDOMEN; qSOFA ≥2 → A-SEPSIS."
+  },
+  "C-SKIN-INFECTION": {
+    "level": "priority", "title": "Suspected skin infection",
+    "now": ["Mark the edge of the redness with a pen; take a photo.", "Keep the area clean and dry; do not squeeze."],
+    "waiting": ["Antibiotic cream or medication: per kit procedure."],
+    "monitor": "The panel asks for a photo every 12 hours and a comparison with the marked edge.",
+    "comms": "Photos, temperature records.",
+    "worse": "Redness passes the mark with fever or shivering → package priority rises; qSOFA ≥2 → A-SEPSIS."
+  },
+  "C-SKIN-BLISTER": {
+    "level": "priority", "title": "Blistering / painful rash",
+    "now": ["Do not burst the blisters; cover with a clean, dry dressing.", "Take care with hand hygiene; do not share items."],
+    "waiting": ["Antiviral medication: per kit procedure (starting early matters)."],
+    "monitor": "If the rash is around the eye, vision test reminder every 12 hours.",
+    "comms": "Photos, start date.",
+    "worse": "Change in vision → A-EYE."
+  }
+}
